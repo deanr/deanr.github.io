@@ -28,8 +28,8 @@ a {color:#007aff; text-decoration: none; }
 .phone_link {color:#007aff; text-decoration: none; font-size:5em; text-align: center; display: block; margin: 20px .5em 135px .5em;}
 .phone_link img {margin-right: .25em;}
 
-.choose_plan_link {color:#007aff; text-decoration: none; font-size:60px; display: block; margin: 60px 0 60px 50px; font-weight: lighter; }
-.choose_plan_link img {margin:0 0 0 20px; position: absolute;}
+.to_top_link {color:#007aff; text-decoration: none; font-size:60px; display: block; margin: 60px 0 60px 50px; font-weight: lighter; }
+.to_top_link img {margin:0 0 0 20px; position: absolute;}
 
 ul {width: 35%; display: inline-block; margin:0 0 40px 70px;}
 li {list-style-type: none; font-size: 2.5em; margin-bottom:15px;}
@@ -47,7 +47,15 @@ a {color:#007aff; text-decoration: none; }
 </head>
 
 <body>
-  <!--script src="js/scripts.js"></script-->
+  <script src="https://www.mdlive.com/scripts/jquery-1.7.2.min.js"></script>
+  <script>
+  	$('.to_top_link').click(function (e) {
+    	e.preventDefault();
+    	$('html, body').animate({
+        	scrollTop: 0
+    	});
+	});
+  </script>
 <!--div style="background-gcolor:#e6e6e8; border-radius:10px;"><img src="images/icon_lock.png" alt="lock icon">mdlive.com<img src="images/icon_refresh.png" alt="refresh icon button"></div-->
 <div class="content_section">
 	<img src="images/logo_mdlive.png" alt="MDLIVE logo" class="logo_top" >
@@ -75,7 +83,7 @@ a {color:#007aff; text-decoration: none; }
 
 	<p>Our doctors will see you now!</p>
 
-	<a href="#" class="choose_plan_link">Top <img src="images/button_up_arrow_x2.png"></a>	
+	<a href="#" class="to_top_link">Top <img src="images/button_up_arrow_x2.png"></a>	
 </div>
 
 <div class="content_section">
@@ -121,7 +129,7 @@ a {color:#007aff; text-decoration: none; }
 		<li>If traveling and in need of medical care</li>
 		<li>During or after normal business hours, nights, weekends and even holidays</li>
 	</ul>
-	<a href="#" class="choose_plan_link">Top <img src="images/button_up_arrow_x2.png"></a>	
+	<a href="#" class="to_top_link">Top <img src="images/button_up_arrow_x2.png"></a>	
 </div>
 
 <div class="content_section">
