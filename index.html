@@ -51,16 +51,31 @@ a {color:#007aff; text-decoration: none; }
   <script src="https://www.mdlive.com/scripts/jquery-1.7.2.min.js"></script>
   <script>
   $( document ).ready(function() {
-  	$('.to_top_link').click(function (e) {
-    	e.preventDefault();
-    	$('html, body').animate({
-        	scrollTop: 0
-    	});
+  	//$('.to_top_link').click(function (e) {
+    //	e.preventDefault();
+    //	$('html, body').animate({
+    //    	scrollTop: 0
+    //	});
+	//});
+
+	$('a[href*=#]:not([href=#])').click(function() {
+	  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+		|| location.hostname == this.hostname) {
+
+	    	var target = $(this.hash);
+	        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	        if (target.length) {
+	        	$('html,body').animate({
+	            	scrollTop: target.offset().top
+	            }, 1000);
+	            return false;
+	        }
+	    }
 	});
   });
   </script>
 <!--div style="background-gcolor:#e6e6e8; border-radius:10px;"><img src="images/icon_lock.png" alt="lock icon">mdlive.com<img src="images/icon_refresh.png" alt="refresh icon button"></div-->
-<div class="content_section">
+<div class="content_section" id="top">
 	<img src="images/logo_mdlive.png" alt="MDLIVE logo" class="logo_top" >
 	<h1>Welcome to MDLIVE</h1>
 	<h2>Do you get MDLIVE as a benefit through your employer or group?</h2>
@@ -71,10 +86,10 @@ a {color:#007aff; text-decoration: none; }
 	<div class="assistance">Need assistance?</div>
 	<a href="tel:+18004006354" class="phone_link"><img src="images/icon_phone_blue.png" alt="phone icon">1-800-400-6354</a>
 
-	<div style="text-align:center; margin:30px auto;"><img src="images/arrow_down_carrot_blue.png" border="0"></div>
+	<div style="text-align:center; margin:30px auto;"><a href="#whatismdlive"><img src="images/arrow_down_carrot_blue.png" border="0"></a></div>
 </div>
 
-<div class="content_section">
+<div class="content_section" id="whatismdlive">
 	<h3>What is MDLIVE?</h3>
 	<p>With MDLIVE you can visit with a Doctor or Therapist in real time from the comfort of your home or office.</p>
 
@@ -86,7 +101,7 @@ a {color:#007aff; text-decoration: none; }
 
 	<p>Our doctors will see you now!</p>
 
-	<a href="#" class="to_top_link">Top <img src="images/button_up_arrow_x2.png"></a>	
+	<a href="#top" class="to_top_link">Top <img src="images/button_up_arrow_x2.png"></a>	
 </div>
 
 <div class="content_section">
@@ -132,7 +147,7 @@ a {color:#007aff; text-decoration: none; }
 		<li>If traveling and in need of medical care</li>
 		<li>During or after normal business hours, nights, weekends and even holidays</li>
 	</ul>
-	<a href="#" class="to_top_link">Top <img src="images/button_up_arrow_x2.png"></a>	
+	<a href="#top" class="to_top_link">Top <img src="images/button_up_arrow_x2.png"></a>	
 </div>
 
 <div class="content_section">
