@@ -45,38 +45,14 @@ a {color:#007aff; text-decoration: none; }
 .assistance{text-align:center; font-size:2.5em; margin-top: 60px;}
 
 /*Dialog Section*/
-#boxes #dialog1, #boxes #dialog2 {
-padding-left: 2em;
-padding-right: 2em;
-background: #ffffff;
-}
-
-#dialog2 h1 {font-size:2em;}
-
-#boxes .window {
-position: fixed;
-left: 0;
-top: 0;
-display: none;
-z-index: 9999;
-padding: 20px;
-}
-
-#mask {
-position: absolute;
-left: 0;
-top: 0;
-z-index: 9000;
-background-color: #444444;
-display: none;
-}
-
+h1.modal {font-size:2em;}
 </style>  
 </head>
 
 <body id="top">
   <script src="https://www.mdlive.com/scripts/jquery-1.7.2.min.js"></script>
-  <script src="https://www.mdlive.com/pages/sentara/scripts/jquery_modal.js"></script>
+  <script src="https://www.mdlive.com/stylesheets/vader/colorbox.css"></script>
+  <script src="https://www.mdlive.com/javascripts/vader/jquery.colorbox-min.js"></script>
   <script>
   $( document ).ready(function() {
   	//$('.to_top_link').click(function (e) {
@@ -100,7 +76,19 @@ display: none;
 	        }
 	    }
 	});
-  });
+  
+	$('#prescription_policy').colorbox({html:'    <h1 class="modal">MDLIVE Prescription Policy</h1>
+      
+<p>MDLIVE is integrated with SureScripts for the delivery of electronic prescriptions to the pharmacy of your choice. With over 60,000 pharmacies to choose, your prescriptions are sent instantly to the pharmacy of your choice as soon as your virtual consultation is over.
+
+<p>Physicians providing consultations for MDLIVE members offer prescriptions for a wide range of products that deliver direct medicinal value. These include, but are not limited to, drug classes such as antibiotics and antihistamines. Convenience prescriptions for maintenance medicines may also be obtained in cases where a member is in transition to a new insurance plan or doctor.
+
+<p>It is important to note that MDLIVE is not a drug fulfillment warehouse. In the event a physician does prescribe medication, he/she will usually limit the supply to no more than thirty days. Patients with chronic illnesses should visit their primary care physicians or other specialists for extended care.
+
+<p>MDLIVE physicians do not issue prescriptions for substances controlled by the DEA, for non-therapeutic use, and/or those which may be harmful (potential for abuse or addiction).
+
+<p>For a current list of DEA controlled substances, visit <a href="http://www.deadiversion.usdoj.gov/schedules" target="_blank">http://www.deadiversion.usdoj.gov/schedules </a>'});
+	});
   </script>
 <!--div style="background-gcolor:#e6e6e8; border-radius:10px;"><img src="images/icon_lock.png" alt="lock icon">mdlive.com<img src="images/icon_refresh.png" alt="refresh icon button"></div-->
 <div class="content_section">
@@ -192,100 +180,5 @@ display: none;
 	<h3>Can I use it for my children?</h3>
 </div>
 
-
-<!-- Modal Dialogs -->
-<div id="boxes">
-
-
-
-<!-- Dialog 1 -->
-<div id="dialog1" class="window rounded10 shadow" style="width:650px; height:350px;">
-
-	<div style="float:right;"><a href="#"class="close"/>Close</a></div>
-    <div class="nofloat">
-  
-   <h1>Common conditions we treat:</h1> 
-   
-   <table width="100%" border="0" cellspacing="0" cellpadding="0">
-  <tr>
-    <td colspan="2" valign="top"><strong>General Health<br>
-      <br>
-    </strong></td>
-    <td width="25%" valign="top"><strong>Pediatric Care</strong></td>
-    <td width="25%" valign="top"><strong>Mental Health</strong></td>
-  </tr>
-  <tr>
-    <td valign="top" class="conditionslist">
-      Allergies<br>
-      Asthma<br>
-      Bronchitis<br>
-      Cellulitis<br>
-      Cold &amp; Flu<br>
-      Constipation<br>
-      Diarrhea<br>
-      Ear Infection<br>
-      Fever<br>
-      Gout<br>
-      Headache</p></td>
-    <td valign="top" class="conditionslist">
-      Infections<br>
-      Insect Bites<br>
-      Joint Aches &amp; Pains<br>
-      Poison Ivy<br>
-      Rashes<br>
-      Respiratory infections<br>
-      Sinus Infection<br>
-      Skin Inflammations<br>
-      Sore Throat<br>
-      Sports Injuries<br>
-      Urinary Tract Infection</p></td>
-    <td valign="top" class="conditionslist">
-      Cold &amp; Flu<br>
-      Constipation<br>
-      Ear Infection<br>
-      Fever
-      <br>
-      Nausea<br>
-      Pink Eye<br>
-      Vomiting</td>
-    <td valign="top" class="conditionslist">
-      Anxiety &amp; Depression<br>
-      Child Behavior<br>
-      Eating Disorders<br>
-      Marital Issues<br>
-      Sleep Disorders<br>
-      Smoke Addiction<br>
-      Substance Abuse</td>
-  </tr>
-</table>
-   
-   
-   </div>
-</div>
-
-
-
-<!-- Dialog 2 -->
-<div id="dialog2" class="window rounded10 shadow" style="width:650px; height:350px;">
-
-	<div style="float:right;"><a href="#"class="close"/>Close</a></div>
-    <div class="nofloat">
-   
-    <h1>MDLIVE Prescription Policy</h1>
-      
-<p>MDLIVE is integrated with SureScripts for the delivery of electronic prescriptions to the pharmacy of your choice. With over 60,000 pharmacies to choose, your prescriptions are sent instantly to the pharmacy of your choice as soon as your virtual consultation is over.
-
-<p>Physicians providing consultations for MDLIVE members offer prescriptions for a wide range of products that deliver direct medicinal value. These include, but are not limited to, drug classes such as antibiotics and antihistamines. Convenience prescriptions for maintenance medicines may also be obtained in cases where a member is in transition to a new insurance plan or doctor.
-
-<p>It is important to note that MDLIVE is not a drug fulfillment warehouse. In the event a physician does prescribe medication, he/she will usually limit the supply to no more than thirty days. Patients with chronic illnesses should visit their primary care physicians or other specialists for extended care.
-
-<p>MDLIVE physicians do not issue prescriptions for substances controlled by the DEA, for non-therapeutic use, and/or those which may be harmful (potential for abuse or addiction).
-
-<p>For a current list of DEA controlled substances, visit <a href="http://www.deadiversion.usdoj.gov/schedules" target="_blank">http://www.deadiversion.usdoj.gov/schedules </a></div>
-</div>
-
-<!-- Mask to cover the whole screen -->
-<div id="mask"></div>
-</div>
 </body>
 </html>
