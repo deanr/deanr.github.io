@@ -44,10 +44,34 @@ a {color:#007aff; text-decoration: none; }
 
 .assistance{text-align:center; font-size:2.5em; margin-top: 60px;}
 
+/*Dialog Section*/
+#boxes #dialog1, #boxes #dialog2 {
+padding-left: 30px;
+padding-right: 30px;
+background: #ffffff;
+}
+
+#boxes .window {
+position: fixed;
+left: 0;
+top: 0;
+width: 800px;
+height: 450px;
+display: none;
+z-index: 9999;
+padding: 20px;
+}
+
+#mask {
+position: absolute;
+left: 0;
+top: 0;
+z-index: 9000;
+background-color: #444444;
+display: none;
+}
+
 </style>  
-
-<link href="https://www.mdlive.com/pages/sentara/css/global.css" rel="stylesheet" type="text/css">
-
 </head>
 
 <body id="top">
@@ -259,7 +283,6 @@ a {color:#007aff; text-decoration: none; }
 
 <p>For a current list of DEA controlled substances, visit <a href="http://www.deadiversion.usdoj.gov/schedules" target="_blank">http://www.deadiversion.usdoj.gov/schedules </a></div>
 </div>
-
 
 <!-- Mask to cover the whole screen -->
 <div id="mask"></div>
