@@ -50,6 +50,86 @@ a {color:#007aff; text-decoration: none; }
 /*Form Sections*/
 input {border-radius: 10px; font-size: 3.5em; color:#7a7a7a; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; margin: 0 auto .9em auto; width: 85%; display: block;}
 
+.input_state {width: 45%; display:inline-block; margin: 0 .5em .9em 50px;}
+.input_zip {width: 30%; display: inline-block; margin: 0 .5em .9em .5em;}
+.input_month, .input_day {width: 100px; text-align: center; display: inline-block; margin: 0 .5em .9em .5em; border-radius: 0;}
+.input_year { display: inline-block;width: 150px; margin: 0 .5em; border-radius: 0;}
+
+.label, .label_inside {font-size: 2.5em;}
+.label {margin:0 30px 0 50px;}
+
+.toggle_btn {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; margin: 0 auto .9em auto; width: 315px; display: inline-block;}
+#male_toggle {border-radius: 10px 0 0 10px; border-right: 1px solid #ebebec; margin-left: 120px;}
+#female_toggle {border-radius: 0 10px 10px 0; border-left: 1px solid #bbbbbd;}
+
+input[type=checkbox] {
+   position: absolute;
+   top: -9999px;
+   left: -9999px;
+}
+label { 
+background-color: #fff;
+border-radius: 15px;
+border: 1px solid #cecece;	
+  display: inline-block;
+  margin: 60px 0 10px 50px;
+  padding: 35px;
+  cursor: pointer;
+}
+
+
+/* SQUARED FOUR */
+.squaredFour {
+	position: relative;
+}
+
+.squaredFour label {
+	cursor: pointer;
+	position: absolute;
+	width: 10px;
+	height: 10px;
+	top: 0;
+	border-radius: 15px;
+
+	background: #fff;
+
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+}
+
+.squaredFour label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+	filter: alpha(opacity=0);
+	opacity: 0;
+	content: '';
+	position: absolute;
+	width: 20px;
+	height: 11px;
+	background: transparent;
+	top: 4px;
+	left: 4px;
+	border: 3px solid #cecece;
+	border-top: none;
+	border-right: none;
+
+	-webkit-transform: rotate(-45deg);
+	-moz-transform: rotate(-45deg);
+	-o-transform: rotate(-45deg);
+	-ms-transform: rotate(-45deg);
+	transform: rotate(-45deg);
+}
+
+.squaredFour label:hover::after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
+	filter: alpha(opacity=30);
+	opacity: 0.5;
+}
+
+.squaredFour input[type=checkbox]:checked + label:after {
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
+	filter: alpha(opacity=100);
+	opacity: 1;
+}
+
 
 /*Dialog Section*/
 h1.modal {font-size:2em;}
@@ -104,18 +184,34 @@ html { -webkit-font-smoothing: antialiased; }
 				<img src="images/logo_mdlive.png" alt="MDLIVE logo" class="logo_top">
 			</td>
 			<td width="30%" align="right">
-				<h2 class="small_text_header">1 of 2</h2>
+				<h2 class="small_text_header">2 of 2</h2>
 			</td>
 		</tr>
 	<table>
 
-	<input id="" class="" name="" type="" placeholder="First Name">
-	<input id="" class="" name="" type="" placeholder="Last Name">
-	<input id="" class="" name="" type="" placeholder="E-mail">
-	<input id="" class="" name="" type="" placeholder="Username">
-	<input id="" class="" name="" type="" placeholder="Password">
-	<input id="" class="" name="" type="" placeholder="Confirm Password">
+	<input id="" class="" name="" type="" placeholder="Phone">
+	<input id="" class="" name="" type="" placeholder="Address">
+	<input id="" class="" name="" type="" placeholder="City">
+	
+	<input id="" class="input_state" name="" type="" placeholder="State">
+	<input id="" class="input_zip" name="" type="" placeholder="Zip">
+	
+	<span class="label">Date of Birth:</span> 
+	<input id="" class="input_month" name="" type="" placeholder="MM"> <span class="label_inside">/</span>
+	<input id="" class="input_day" name="" type="" placeholder="DD"> <span class="label_inside">/</span>
+	<input id="" class="input_year" name="" type="" placeholder="YYYY">
 
+	<span class="label">Gender:</span>
+	<button class="toggle_btn" id="male_toggle">Male</button>
+	<button class="toggle_btn" id="female_toggle">Female</button>
+
+	<!--label for="terms_agreement">&#x2713;</label-->
+	<input type="checkbox" class="checkbox" id="terms_agreement"> <span class="checkbox">I agree to the Terms of Service</span>
+
+	<!--div class="squaredFour">
+		<input type="checkbox" value="None" id="squaredFour" name="check">
+		<label for="squaredFour"></label>
+	</div-->
 	<button class="button_next" id="next_button">Next</button>
 
 </div>
