@@ -80,6 +80,14 @@ html { -webkit-font-smoothing: antialiased; }
 
   <script type="text/javascript">
   $( document ).load(function() {
+  //scroll and expand inputs and guidelines
+  	function scrollToAnchor(aid){
+	    var aTag = $("a[name='"+ aid +"']");
+	    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+	}
+  });
+  
+  $( document ).ready(function() {
   	$('#next_button').click(function() {
 	  window.location='sign_up_form2.html';
 	});
@@ -98,12 +106,7 @@ html { -webkit-font-smoothing: antialiased; }
 	        }
 	    }
 	});
-  	//scroll and expand inputs and guidelines
-  	function scrollToAnchor(aid){
-	    var aTag = $("a[name='"+ aid +"']");
-	    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-	}
-
+  	
 	$("#email").focus(function() {
 	   scrollToAnchor('tag_email');
 	   	$( "#email_guidelines" ).show("slow");
