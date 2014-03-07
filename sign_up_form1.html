@@ -80,11 +80,34 @@ html { -webkit-font-smoothing: antialiased; }
 
   <script type="text/javascript">
   $( document ).load(function() {
-  //scroll and expand inputs and guidelines
-  	function scrollToAnchor(aid){
-	    var aTag = $("a[name='"+ aid +"']");
-	    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-	}
+	  $("#email").focus(function() {
+		   scrollToAnchor('tag_email');
+		   	$( "#email_guidelines" ).show("slow");
+			$("li.echeck10").addClass("guideline-error");
+			$( "#password_guidelines" ).hide("slow");
+			$( "#bottompadding" ).show();    
+		});
+		$("#email").blur(function() {
+		   	$( "#email_guidelines" ).hide("slow");
+		});
+
+		$("#username").focus(function(){
+		  scrollToAnchor('tag_username');
+		  $( "#username_guidelines" ).show("slow");
+		  $("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
+		  $( "#password_guidelines" ).hide("slow");
+		  $( "#bottompadding" ).show();    
+		});
+		$("#username").blur(function() {
+		   	$( "#username_guidelines" ).hide("slow");
+		});
+
+		$("#password").focus(function() {
+		   scrollToAnchor('tag_password');
+	       $( "#password_guidelines" ).show("slow");
+		   $("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
+		   $( "#bottompadding" ).show();    
+		});
   });
   
   $( document ).ready(function() {
@@ -107,34 +130,13 @@ html { -webkit-font-smoothing: antialiased; }
 	    }
 	});
   	
-	$("#email").focus(function() {
-	   scrollToAnchor('tag_email');
-	   	$( "#email_guidelines" ).show("slow");
-		$("li.echeck10").addClass("guideline-error");
-		$( "#password_guidelines" ).hide("slow");
-		$( "#bottompadding" ).show();    
-	});
-	$("#email").blur(function() {
-	   	$( "#email_guidelines" ).hide("slow");
-	});
-
-	$("#username").focus(function(){
-	  scrollToAnchor('tag_username');
-	  $( "#username_guidelines" ).show("slow");
-	  $("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
-	  $( "#password_guidelines" ).hide("slow");
-	  $( "#bottompadding" ).show();    
-	});
-	$("#username").blur(function() {
-	   	$( "#username_guidelines" ).hide("slow");
-	});
-
-	$("#password").focus(function() {
-	   scrollToAnchor('tag_password');
-       $( "#password_guidelines" ).show("slow");
-	   $("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
-	   $( "#bottompadding" ).show();    
-	});
+  	//scroll and expand inputs and guidelines
+  	function scrollToAnchor(aid){
+	    var aTag = $("a[name='"+ aid +"']");
+	    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+	}
+	
+	
 
 	$("#first_name, #last_name").focus(function(){
 		$( "#password_guidelines" ).hide("slow");
