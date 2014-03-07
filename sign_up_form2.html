@@ -61,7 +61,7 @@ input {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e
 
 .label, .label_inside {font-size: 2.5em;}
  span.checkbox {font-size: 3em;}
-.label {margin:0 20px 0 50px;}
+.label {margin:0 29px 0 50px;}
 
 .toggle_btn {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; margin: 0 auto .9em auto; width: 290px; display: inline-block;}
 #male_toggle {border-radius: 10px 0 0 10px; border-right: 1px solid #ebebec; margin-left: 120px;}
@@ -106,17 +106,19 @@ input[type='checkbox']:after {
 }
 .rbutton {display: inline-block;}
 
-.rbutton label {font-size: 3.5em; color:#000; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; margin: 0 auto .9em auto; width: 290px; display: inline-block; text-align: center;}
+.rbutton label {font-size: 3.5em; color:#000; background-color: #e6e6e8; font-weight: 200; padding: 35px 25px; margin: 0 auto .9em auto; width: 290px; display: inline-block; text-align: center;}
 
 .rlabel_yes {
-border-style:solid;
-border-right-color:#ebebec;
+ border-right: 1px solid #ebebec;
  border-radius: 10px 0 0 10px; margin-left: 120px;
 }
 
 .rlabel_no {
 border-style:solid;
 border-left-color:#bbbbbd;
+border-right-style:none;
+border-top-style:none;
+border-bottom-style:none;
   border-radius: 0 10px 10px 0;
 }
 
@@ -197,11 +199,11 @@ html { -webkit-font-smoothing: antialiased; }
 	<input id="" class="input_year" name="" type="" placeholder="YYYY">
 
 	<span class="label">Gender:</span>
-	<button class="toggle_btn" id="male_toggle">Male</button>
-	<button class="toggle_btn" id="female_toggle">Female</button>
+	<!--button class="toggle_btn" id="male_toggle">Male</button>
+	<button class="toggle_btn" id="female_toggle">Female</button-->
 
 
-<div class="rbutton">
+			<div class="rbutton">
              <input type="radio" name="conditions" id="conditions_yes" value="yes">
              <label for="conditions_yes" class="rlabel_yes">Male</label>
              </div> 
