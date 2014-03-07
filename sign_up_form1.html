@@ -165,7 +165,7 @@ html { -webkit-font-smoothing: antialiased; }
 	}
 
 	//Validates Username
-	$("#username").bind("change paste keyup", function() {
+	$("#username").bind("change paste keyup focus", function() {
 	  	console.log('value changed and validated');
 	  	scrollToAnchor('tag_username');
 	  // validates username character at least 6
