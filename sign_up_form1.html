@@ -60,7 +60,8 @@ li.guideline-good:before {content: url(images/check_yes.gif);}
 li.guideline-good {color: green; list-style-type: none; visibility:visible!important;}
 li.guideline-error:before {content: url(images/check_no.gif);}
 li.guideline-error {color: red; list-style-type: none; visibility: visible!important;}
-label.guidelines {visibility: hidden; display: inline-block;}
+label.guidelines {visibility: hidden; display: inline-block; margin: 0 0 10px 50px;
+font-size: 2.8em;}
 li.ucheck1, li.ucheck2, li.ucheck3, li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8, li.echeck10, li.echeck9  {visibility: hidden;} 
 
 /*Dialog Section*/
@@ -109,26 +110,26 @@ html { -webkit-font-smoothing: antialiased; }
 	});
 
 
-	$("#username").focusout(function(){
-	  $( "#usernametips" ).hide("slow");
+	$("#username").focus(function(){
+	  scrollToAnchor('tag_username');
+	  $( "#bottompadding" ).show();    
 	});
 
 
 	$("#password").focus(function() {
-	   scrollToAnchor('id4');
-	    $( "#passwordtips" ).show("slow");    
+	   scrollToAnchor('tag_password');
+	   $( "#bottompadding" ).show();    
 	});
-
-
-	$("#password").focusout(function(){
-	  $( "#passwordtips" ).hide("slow");
-	});
+//	$("#confirm_password").focus(function(){
+//	  scrollToAnchor('tag_confirm_password');
+//	    $( "#bottompadding" ).show();    
+//	});
 
 	//Validates that email is an actual email address
 	$('#email').first().keyup(function () {
 	    var $email = this.value;
 	    validateEmail($email);
-			    $( "#email_guidelines" ).show("slow");
+		$( "#email_guidelines" ).show("slow");
 	});
 
 	function validateEmail(email) {
@@ -144,6 +145,125 @@ html { -webkit-font-smoothing: antialiased; }
 	    }
 	}
 
+	//Validates Username
+	$("#username").bind("change paste keyup", function() {
+	  	console.log('value changed and validated');
+		$( "#username_guidelines" ).show("slow");
+	  // validates username character at least 6
+		$("label.guidelines").css('visibility', 'visible');
+		var username_length = $("#username").val().length;
+    	if (username_length > 5) {
+		   	$("li.ucheck1").addClass("guideline-good");
+		   	$("li.ucheck1").removeClass("guideline-error");
+		   	console.log('is at least 5');
+		} else {
+			$("li.ucheck1").addClass("guideline-error");
+		   	$("li.ucheck1").removeClass("guideline-good");
+		   	console.log('is less than 6');
+		}
+		// validates username at least 1 letter
+		var username_alpha = $("#username").val();
+		var patt=/[a-zA-Z]/;
+		if(patt.test(username_alpha)){
+            $("li.ucheck2").addClass("guideline-good");
+		   	$("li.ucheck2").removeClass("guideline-error");
+		   	console.log("at least 1 alpha");
+        }else{
+            $("li.ucheck2").addClass("guideline-error");
+		   	$("li.ucheck2").removeClass("guideline-good");
+		   	console.log("no alpha entered");
+        }
+        // validates username no special char
+		var username_special = $("#username").val();
+		var spechar=/[#;&,.+*~%_\-`\':"!^${}[\]()=>|\/@]/;
+		if(spechar.test(username_special)){
+            $("li.ucheck3").addClass("guideline-error");
+		   	$("li.ucheck3").removeClass("guideline-good");
+		   	console.log("does not contain special char");
+        }else{
+            $("li.ucheck3").addClass("guideline-good");
+		   	$("li.ucheck3").removeClass("guideline-error");
+		   	console.log("contains special char");
+        }
+        // validates password is not the same as password 
+		var username = $("#username").val();
+		var sameasuser = $("#password").val();
+		if(sameasuser == username){
+            $("li.ucheck6").addClass("guideline-error");
+		   	$("li.ucheck6").removeClass("guideline-good");
+		   	console.log("not the same as username");
+        }else{
+            $("li.ucheck6").addClass("guideline-good");
+		   	$("li.ucheck6").removeClass("guideline-error");
+		   	console.log("error, password is the same as username");
+        }
+	});
+
+	
+	//Validates Password
+	$("#password, #confirm_password").bind("change paste keyup", function() {
+	  	console.log('value changed and validated');
+		$( "#password_guidelines" ).show("slow");
+	   // validates username character at least 6
+		$("label.guidelines").css('visibility', 'visible');
+		var password_length = $("#password").val().length;
+    	if (password_length > 6) {
+		   	$("li.ucheck4").addClass("guideline-good");
+		   	$("li.ucheck4").removeClass("guideline-error");
+		   	console.log('is at least 6 char');
+		} else {
+			$("li.ucheck4").addClass("guideline-error");
+		   	$("li.ucheck4").removeClass("guideline-good");console.log('is < than 6');
+		}
+		// validates username at least 1 letter
+		var password_alpha = $("#password").val();
+		var patt=/[a-zA-Z]/;
+		if(patt.test(password_alpha)){
+            $("li.ucheck5").addClass("guideline-good");
+		   	$("li.ucheck5").removeClass("guideline-error");
+		   	console.log("1 alpha");
+        }else{
+            $("li.ucheck5").addClass("guideline-error");
+		   	$("li.ucheck5").removeClass("guideline-good");
+		   	console.log("no alpha entered");
+        }
+        // validates username at least 1 number
+		var password_num = $("#password").val();
+		var patt=/[0-9]/;
+		if(patt.test(password_num)){
+            $("li.ucheck7").addClass("guideline-good");
+		   	$("li.ucheck7").removeClass("guideline-error");
+		   	console.log("1 numeric");
+        }else{
+            $("li.ucheck7").addClass("guideline-error");
+		   	$("li.ucheck7").removeClass("guideline-good");
+		   	console.log("no numeric entered");
+        }
+        // validates password is not the same as username 
+		var username = $("#username").val();
+		var sameasuser = $("#password").val();
+		if(sameasuser == username){
+            $("li.ucheck6").addClass("guideline-error");
+		   	$("li.ucheck6").removeClass("guideline-good");
+		   	console.log("not the same as username");
+        }else{
+            $("li.ucheck6").addClass("guideline-good");
+		   	$("li.ucheck6").removeClass("guideline-error");
+		   	console.log("error, password is the same as username");
+        }
+        // validates password is the same 
+		var password = $("#password").val();
+		var samepasswords = $("#confirm_password").val();
+		if(samepasswords == password){
+            $("li.ucheck8").addClass("guideline-good");
+		   	$("li.ucheck8").removeClass("guideline-error");
+		   	console.log("passwords match");
+        }else{
+            $("li.ucheck8").addClass("guideline-error");
+		   	$("li.ucheck8").removeClass("guideline-good");
+		   	console.log("error, passwords must match");
+        }
+	});
   });
   </script>
 
@@ -177,10 +297,28 @@ html { -webkit-font-smoothing: antialiased; }
 		</ul>
 	</div>
 	<a name="tag_username"/></a><input id="username" class="" name="" type="" placeholder="Username">
+	<div id="username_guidelines" style="display:none;">
+		<label class="guidelines">Username Guidelines</label>
+		<ul class="guidelines">
+			<li class="ucheck1">Must be at least 6 characters in length</li>
+			<li class="ucheck2">Must contain at least one letter</li>
+			<li class="ucheck3">Cannot include special characters (&, %, *, etc.)</li>
+		</ul>
+	</div>
 	<a name="tag_password"/></a><input id="password" class="" name="" type="" placeholder="Password">
-	<a name="tag_confirm_password"/></a><input id="confirm_password" class="" name="" type="" placeholder="Confirm Password">
-
-	<div id="bottompadding" style="display:none;">&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br></div>
+	<input id="confirm_password" class="" name="" type="" placeholder="Confirm Password">
+	<div id="password_guidelines" style="display:none;">
+		<label class="guidelines">Password Guidelines</label>
+		<ul class="guidelines">
+			<li class="ucheck6">Cannot be the same as your Username</li>
+			<li class="ucheck4">Must contain at least 7 characters</li>
+			<li class="ucheck5">Must contain at least one letter</li>
+			<li class="ucheck7">Must contain at least one number</li>
+			<li class="ucheck8">Passwords must match</li>
+		</ul>
+	</div>
+	
+	<div id="bottompadding" style="display:none;">&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br></div>
 
 	<button class="button_next" id="next_button">Next</button>
 
