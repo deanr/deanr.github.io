@@ -1,4 +1,5 @@
 <!doctype html>
+
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -18,8 +19,6 @@ body {font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "
 
 h1 {font-size: 70px; margin:1em 25px; text-align: center; font-weight: 400;}
 h2 {font-size: 60px; font-weight: 200; text-align: center; width: 95%; margin: 70px auto 100px auto;}
-h2.small_text_header {display: inline-block; width: auto; font-size: 3em; font-style: italic; margin: 0 1.2em;}
-
 h3 {font-size: 3.5em; background-color: #e1e1e1; margin: 0; font-weight: 300; padding: 20px 30px 20px 50px; border-top: 1px #d6d5d5 solid;  border-bottom: 1px #d6d5d5 solid;}
 h4 {font-size: 2.5em; font-weight: 400; padding: 0 0 0 50px; background: url('');}
 
@@ -54,6 +53,52 @@ input {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e
     color:    #7a7a7a;
 }
 
+.input_state {width: 45%; display:inline-block; margin: 0 .5em .9em 50px;}
+.input_zip {width: 30%; display: inline-block; margin: 0 .5em .9em .5em;}
+.input_month, .input_day {width: 100px; text-align: center; display: inline-block; margin: 0 .3em .9em .3em; border-radius: 0;}
+.input_year { display: inline-block;width: 140px; margin: 0 .4em; border-radius: 0;}
+
+.label, .label_inside {font-size: 2.5em;}
+ span.checkbox {font-size: 3em;}
+.label {margin:0 20px 0 50px;}
+
+.toggle_btn {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; margin: 0 auto .9em auto; width: 290px; display: inline-block;}
+#male_toggle {border-radius: 10px 0 0 10px; border-right: 1px solid #ebebec; margin-left: 120px;}
+#female_toggle {border-radius: 0 10px 10px 0; border-left: 1px solid #bbbbbd;}
+
+
+input[type='checkbox'] {
+    margin-top: -30px;
+}
+input[type='checkbox'] {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeSpeed;
+    width: 75px;
+    height: 75px;
+    margin: 0 50px 0 50px;
+    margin-right: 1px;
+    display: inline-block;
+    position: relative;
+    cursor:pointer;
+}
+input[type='checkbox']:after {
+    content:"";
+    vertical-align: middle;
+    text-align: center;
+    line-height: 13px;
+    position: absolute;
+    cursor: pointer;
+    height: 0px;
+    width: 0px;
+    left:15px;
+    top:30px;
+    font-size:75px;
+    -webkit-box-shadow: inset 0px 1px 1px #000, 0px 1px 0px #444;
+    -moz-box-shadow: inset 0px 1px 1px #000, 0px 1px 0px #444;
+    box-shadow: inset 0px 1px 1px #000, 0px 1px 0px #444;
+    background: #fff;
+}
+
 /*Dialog Section*/
 h1.modal {font-size:2em;}
 
@@ -70,10 +115,8 @@ html { -webkit-font-smoothing: antialiased; }
 
   <script type="text/javascript">
   $( document ).ready(function() {
-  	$('#next_button').click(function() {
-	  window.location='sign_up_form2.html';
-	});
-	//for the scroll links to top
+  	$('.fancybox').fancybox();
+  	//for the scroll links to top
 	$('a[href*=#]:not([href=#])').click(function() {
 	  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
 		|| location.hostname == this.hostname) {
@@ -88,34 +131,9 @@ html { -webkit-font-smoothing: antialiased; }
 	        }
 	    }
 	});
-  	//scroll and expand inputs and guidelines
-  	function scrollToAnchor(aid){
-	    var aTag = $("a[name='"+ aid +"']");
-	    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-	}
-
-	$("#email").focus(function() {
-	   scrollToAnchor('tag_email');
-	    $( "#email_guidelines" ).show("slow");    
-	    $( "#bottompadding" ).show();    
+  	$('#no_button').click(function() {
+	  window.location='sign_up_form1.html';
 	});
-
-
-	$("#username").focusout(function(){
-	  $( "#usernametips" ).hide("slow");
-	});
-
-
-	$("#password").focus(function() {
-	   scrollToAnchor('id4');
-	    $( "#passwordtips" ).show("slow");    
-	});
-
-
-	$("#password").focusout(function(){
-	  $( "#passwordtips" ).hide("slow");
-	});
-
   });
   </script>
 
@@ -125,30 +143,15 @@ html { -webkit-font-smoothing: antialiased; }
 	
 <!--div style="background-gcolor:#e6e6e8; border-radius:10px;"><img src="images/icon_lock.png" alt="lock icon">mdlive.com<img src="images/icon_refresh.png" alt="refresh icon button"></div-->
 <div class="content_section">
-	<table width="100%" style="margin-bottom:1em;">
-		<tr>
-			<td width="30%" align="left">
-				<h2 class="small_text_header">Sign Up</h2>
-			</td>
-			<td width="40%" align="center">
-				<img src="images/logo_mdlive.png" alt="MDLIVE logo" class="logo_top">
-			</td>
-			<td width="30%" align="right">
-				<h2 class="small_text_header">1 of 2</h2>
-			</td>
-		</tr>
-	<table>
+	<img src="images/logo_mdlive.png" alt="MDLIVE logo" class="logo_top" >
+	<h1>Benefit Registration</h1>
+	<h2 style="width:70%;">Please enter your company or group name:</h2>
 
-	<input id="" class="" name="" type="" placeholder="First Name">
-	<input id="" class="" name="" type="" placeholder="Last Name">
-	<a name="tag_email"/></a><input id="email" class="" name="" type="" placeholder="E-mail">
-	<a name="tag_username"/></a><input id="username" class="" name="" type="" placeholder="Username">
-	<a name="tag_password"/></a><input id="password" class="" name="" type="" placeholder="Password">
-	<a name="tag_confirm_password"/></a><input id="confirm_password" class="" name="" type="" placeholder="Confirm Password">
-
-	<div id="bottompadding" style="display:none;">&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br>&nbsp;<br></div>
-
+	<input id="" class="" name="" type="" placeholder="Company or group name">
 	<button class="button_next" id="next_button">Next</button>
+	<br><br><br>
+	<div class="assistance">Need assistance?</div>
+	<a href="tel:+18004006354" class="phone_link"><img src="images/icon_phone_blue.png" alt="phone icon">1-800-400-6354</a>
 
 </div>
 

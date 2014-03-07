@@ -81,6 +81,9 @@ html { -webkit-font-smoothing: antialiased; }
   	$('#no_button').click(function() {
 	  window.location='sign_up_form1.html';
 	});
+	$('#yes_button').click(function() {
+	  window.location='benefit_registration.html';
+	});
   });
   </script>
 
@@ -94,7 +97,7 @@ html { -webkit-font-smoothing: antialiased; }
 	<h1>Welcome to MDLIVE</h1>
 	<h2>Do you get MDLIVE as a benefit through your employer or group?</h2>
 
-	<button class="button_yn">Yes</button>
+	<button class="button_yn" id="yes_button">Yes</button>
 	<button class="button_yn" id="no_button">No </button>
 
 	<div class="assistance">Need assistance?</div>
