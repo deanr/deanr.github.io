@@ -54,6 +54,15 @@ input {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e
     color:    #7a7a7a;
 }
 
+/*Form Validation*/
+ul.guidelines {width: 90%; display: inline-block; margin:0 0 40px 40px;}
+li.guideline-good:before {content: url(images/check_yes.gif);}
+li.guideline-good {color: green; list-style-type: none; visibility:visible!important;}
+li.guideline-error:before {content: url(images/check_no.gif);}
+li.guideline-error {color: red; list-style-type: none; visibility: visible!important;}
+label.guidelines {visibility: hidden; display: inline-block;}
+li.ucheck1, li.ucheck2, li.ucheck3, li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8, li.echeck10, li.echeck9  {visibility: hidden;} 
+
 /*Dialog Section*/
 h1.modal {font-size:2em;}
 
@@ -96,7 +105,6 @@ html { -webkit-font-smoothing: antialiased; }
 
 	$("#email").focus(function() {
 	   scrollToAnchor('tag_email');
-	    $( "#email_guidelines" ).show("slow");    
 	    $( "#bottompadding" ).show();    
 	});
 
@@ -115,6 +123,26 @@ html { -webkit-font-smoothing: antialiased; }
 	$("#password").focusout(function(){
 	  $( "#passwordtips" ).hide("slow");
 	});
+
+	//Validates that email is an actual email address
+	$('#email').first().keyup(function () {
+	    var $email = this.value;
+	    validateEmail($email);
+			    $( "#email_guidelines" ).show("slow");
+	});
+
+	function validateEmail(email) {
+	    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+	    if (!emailReg.test(email)) {
+	        $("li.echeck10").addClass("guideline-error");
+		   	$("li.echeck10").removeClass("guideline-good");
+		   	console.log("error, email must be a valid email address type");
+	    } else {
+	        $("li.echeck10").addClass("guideline-good");
+		   	$("li.echeck10").removeClass("guideline-error");
+		   	console.log("email is valid");
+	    }
+	}
 
   });
   </script>
@@ -142,6 +170,12 @@ html { -webkit-font-smoothing: antialiased; }
 	<input id="" class="" name="" type="" placeholder="First Name">
 	<input id="" class="" name="" type="" placeholder="Last Name">
 	<a name="tag_email"/></a><input id="email" class="" name="" type="" placeholder="E-mail">
+	<div id="email_guidelines" style="display:none;">
+		<label class="guidelines">Email Guidelines</label>
+		<ul class="guidelines">
+			<li class="echeck10">Emails must be a valid Email type</li>
+		</ul>
+	</div>
 	<a name="tag_username"/></a><input id="username" class="" name="" type="" placeholder="Username">
 	<a name="tag_password"/></a><input id="password" class="" name="" type="" placeholder="Password">
 	<a name="tag_confirm_password"/></a><input id="confirm_password" class="" name="" type="" placeholder="Confirm Password">
