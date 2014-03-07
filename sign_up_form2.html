@@ -100,6 +100,32 @@ input[type='checkbox']:after {
     background: #fff;
 }
 
+/*toggle button*/
+.rbutton input[type="radio"] {
+    display: none;
+}
+.rbutton {display: inline-block;}
+
+.rbutton label {font-size: 3.5em; color:#000; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; margin: 0 auto .9em auto; width: 290px; display: inline-block; text-align: center;}
+
+.rlabel_yes {
+border-style:solid;
+border-right-color:#ebebec;
+ border-radius: 10px 0 0 10px; margin-left: 120px;
+}
+
+.rlabel_no {
+border-style:solid;
+border-left-color:#bbbbbd;
+  border-radius: 0 10px 10px 0;
+}
+
+input[type="radio"]:checked + label {
+    background:#949494; color:white;}
+
+
+
+
 /*Dialog Section*/
 h1.modal {font-size:2em;}
 
@@ -173,6 +199,17 @@ html { -webkit-font-smoothing: antialiased; }
 	<span class="label">Gender:</span>
 	<button class="toggle_btn" id="male_toggle">Male</button>
 	<button class="toggle_btn" id="female_toggle">Female</button>
+
+
+<div class="rbutton">
+             <input type="radio" name="conditions" id="conditions_yes" value="yes">
+             <label for="conditions_yes" class="rlabel_yes">Male</label>
+             </div> 
+         	<div class="rbutton">
+             <input type="radio" name="conditions" id="conditions_no" value="no">
+             <label for="conditions_no" class="rlabel_no">Female</label>
+             </div>
+
 
 	<!--label for="terms_agreement">&#x2713;</label-->
 	<table width="100%">
