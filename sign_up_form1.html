@@ -106,38 +106,38 @@ html { -webkit-font-smoothing: antialiased; }
 
 	$("#email").focus(function() {
 	  // scrollToAnchor('tag_email');
-	   	$( "#email_guidelines" ).show("slow");
+	   	$( "#email_guidelines" ).slideDown("slow");
 		$("li.echeck10").addClass("guideline-error");
-		$( "#password_guidelines" ).hide("slow");
-		$( "#bottompadding" ).show();    
+		$( "#password_guidelines" ).slideUp("slow");
+		$( "#bottompadding" ).slideDown();    
 	});
 	$("#email").blur(function() {
-	   	$( "#email_guidelines" ).hide("slow");
+	   	$( "#email_guidelines" ).slideUp("slow");
 	});
 
 	$("#username").focus(function(){
 	  //scrollToAnchor('tag_username');
-	  $( "#username_guidelines" ).show("slow");
-	  //$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
-	  //$( "#password_guidelines" ).hide("slow");
+	  $( "#username_guidelines" ).slideDown("slow");
+	  $("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
+	  $( "#password_guidelines" ).slideUp("slow");
 	  //$( "#bottompadding" ).show();    
 	});
 	$("#username").blur(function() {
-	   	$( "#username_guidelines" ).hide("slow");
+	   	$( "#username_guidelines" ).slideUp("slow");
 	});
 
 	$("#password").focus(function() {
 	  // scrollToAnchor('tag_password');
-       $( "#password_guidelines" ).show("slow");
+       $( "#password_guidelines" ).slideDown("slow");
 	   $("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
-	   $( "#bottompadding" ).show();    
+	   $( "#bottompadding" ).slideDown();    
 	});
 
 	$("#first_name, #last_name").focus(function(){
-		$( "#password_guidelines" ).hide("slow");
+		$( "#password_guidelines" ).slideUp("slow");
 	});
 	$("#confirm_password").focus(function(){
-		$( "#password_guidelines" ).show("slow");
+		$( "#password_guidelines" ).slideDown("slow");
 		$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
 	});
 //	$("#confirm_password").focus(function(){
@@ -317,9 +317,9 @@ html { -webkit-font-smoothing: antialiased; }
 	<div id="username_guidelines" style="display:none;">
 		<label class="guidelines">Username Guidelines</label>
 		<ul class="guidelines">
-			<li class="ucheck1 guideline-error">Must be at least 6 characters in length</li>
-			<li class="ucheck2 guideline-error">Must contain at least one letter</li>
-			<li class="ucheck3 guideline-error">Cannot include special characters (&, %, *, etc.)</li>
+			<li class="ucheck1">Must be at least 6 characters in length</li>
+			<li class="ucheck2">Must contain at least one letter</li>
+			<li class="ucheck3">Cannot include special characters (&, %, *, etc.)</li>
 		</ul>
 	</div>
 	<a name="tag_password"/></a><input id="password" class="" name="" type="" placeholder="Password">
