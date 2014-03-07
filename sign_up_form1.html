@@ -79,8 +79,6 @@ html { -webkit-font-smoothing: antialiased; }
   <link rel="stylesheet" href="jquery.fancybox.css">
 
   <script type="text/javascript">
-  
-  
   $( document ).ready(function() {
   	$('#next_button').click(function() {
 	  window.location='sign_up_form2.html';
@@ -100,9 +98,11 @@ html { -webkit-font-smoothing: antialiased; }
 	        }
 	    }
 	});
-  	
   	//scroll and expand inputs and guidelines
-  	
+  	function scrollToAnchor(aid){
+	    var aTag = $("a[name='"+ aid +"']");
+	    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
+	}
 
 	$("#email").focus(function() {
 	   scrollToAnchor('tag_email');
@@ -281,13 +281,6 @@ html { -webkit-font-smoothing: antialiased; }
 		   	console.log("error, passwords must match");
         }
 	});
-  });
-
-$( document ).load(function() {
-  	function scrollToAnchor(aid){
-	    var aTag = $("a[name='"+ aid +"']");
-	    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
-	}
   });
   </script>
 
