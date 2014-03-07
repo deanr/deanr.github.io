@@ -28,7 +28,7 @@ a {color:#007aff; text-decoration: none; }
 .button_yn {border-radius: 10px; background-color: #d1d3d4; width: 90%; border: 0; padding: 30px; font-size: 5em; font-weight: lighter; margin:80px auto; text-align: center; display: block;}
 .button_yn:hover {background-color: #959595; color: #fff;}
 
-.phone_link {color:#007aff; text-decoration: none; font-size:5em; text-align: center; display: block; margin: 20px .5em 135px .5em;}
+.phone_link {color:#007aff; text-decoration: none; font-size:5em; text-align: center; display: block; margin: 20px .5em 135px .5me;}
 .phone_link img {margin-right: .25em;}
 
 .to_top_link {color:#007aff; text-decoration: none; font-size:60px; display: block; margin: 60px 0 60px 50px; font-weight: lighter; }
@@ -78,7 +78,9 @@ html { -webkit-font-smoothing: antialiased; }
 	        }
 	    }
 	});
-  	
+  	$('#no_button').click(function() {
+	  window.location='sign_up_form1.html';
+	});
   });
   </script>
 
@@ -93,7 +95,7 @@ html { -webkit-font-smoothing: antialiased; }
 	<h2>Do you get MDLIVE as a benefit through your employer or group?</h2>
 
 	<button class="button_yn">Yes</button>
-	<button class="button_yn">No </button>
+	<button class="button_yn" id="no_button">No </button>
 
 	<div class="assistance">Need assistance?</div>
 	<a href="tel:+18004006354" class="phone_link"><img src="images/icon_phone_blue.png" alt="phone icon">1-800-400-6354</a>
@@ -107,7 +109,7 @@ html { -webkit-font-smoothing: antialiased; }
 
 	<p>Our nationwide network of board-certified doctors and licensed therapists is available 24/7 by phone or secure video to assist with non-emergency medical conditions.</p>
 
-	<img src="images/mobile_phone_screens.png" alt="Mobile Phones displaying MDLIVE app" class="content_image">	
+	<img src="images/mobile_phone_screens.png" alt="Mobile Phones displaying MDLIVE app" class="content_image">
 
 	<p>Avoid long waits at the doctor’s office. Eliminate unnecessary visits to the ER or urgent care centers.</p>
 

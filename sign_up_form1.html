@@ -1,0 +1,112 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!--meta name="viewport" content="width=device-width" /-->
+  <title>MDLIVE.com | Sign Up</title>
+  <!--link rel="stylesheet" href="css/styles.css"-->
+
+<style type="text/css">
+body{font-family:serif}
+
+html, body, p {width: auto; display: block; margin: 0; padding:0; }
+
+body {font-family: "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; font-weight: 300; background-color: #f8f8f8; margin: 0; font-size: 16px;}
+.logo_top {margin:2em auto; display: block; width: 321px; height: 90px;}
+.content_section {width: 100%;}
+.content_image {width: 100%;}
+
+h1 {font-size: 70px; margin:1em 25px; text-align: center; font-weight: 400;}
+h2 {font-size: 60px; font-weight: 200; text-align: center; width: 95%; margin: 70px auto 100px auto;}
+h2.small_text_header {display: inline-block; width: 15%; font-size: 2.5em; font-style: italic; margin: 1.8em 2em 0 2em;}
+
+h3 {font-size: 3.5em; background-color: #e1e1e1; margin: 0; font-weight: 300; padding: 20px 30px 20px 50px; border-top: 1px #d6d5d5 solid;  border-bottom: 1px #d6d5d5 solid;}
+h4 {font-size: 2.5em; font-weight: 400; padding: 0 0 0 50px; background: url('');}
+
+p {margin:40px 10px 40px 50px; font-size: 3em; width: auto; background: url('');}
+a {color:#007aff; text-decoration: none; }
+
+.button_yn, .button_next {border-radius: 10px; background-color: #d1d3d4; width: 90%; border: 0; padding: 30px; font-size: 5em; font-weight: lighter; margin:80px auto; text-align: center; display: block;}
+.button_yn:hover, .button_next:hover {background-color: #959595; color: #fff;}
+
+.phone_link {color:#007aff; text-decoration: none; font-size:5em; text-align: center; display: block; margin: 20px .5em 135px .5me;}
+.phone_link img {margin-right: .25em;}
+
+.to_top_link {color:#007aff; text-decoration: none; font-size:60px; display: block; margin: 60px 0 60px 50px; font-weight: lighter; }
+.to_top_link img {margin:0 0 0 20px; position: absolute;}
+
+ul {width: 35%; display: inline-block; margin:0 0 40px 70px;}
+li {list-style-type: none; font-size: 2.5em; margin-bottom:15px;}
+
+ul.checkmark {width:auto; display: inline-block; margin:3em 0 0 40px; list-style-type:none; }
+ul.checkmark > li {font-size: 2.5em; margin-bottom:35px; padding:0 10px 0 1.5em; width: auto; min-height: 50px;
+background-image: url(images/bullet_check_x2.png);
+background-repeat: no-repeat;
+background-position: 0 13px}
+a {color:#007aff; text-decoration: none; }
+
+.assistance{text-align:center; font-size:2.5em; margin-top: 60px;}
+
+/*Form Sections*/
+input {border-radius: 10px; font-size: 3.5em; color:#7a7a7a; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; margin: 0 auto .9em auto; width: 85%; display: block;}
+
+
+/*Dialog Section*/
+h1.modal {font-size:2em;}
+
+html { -webkit-font-smoothing: antialiased; }
+
+</style>  
+
+<script type="text/javascript" src="jquery-1.10.2.min.js"></script>
+  <!--script src="https://members.mdlive.com/stylesheets/vader/colorbox.css"></script>
+  <!--script src="https://members.mdlive.com/javascripts/vader/jquery.colorbox-min.js"></script-->
+  
+  <script type='text/javascript' src="jquery.fancybox.js"></script>
+  <link rel="stylesheet" href="jquery.fancybox.css">
+
+  <script type="text/javascript">
+  $( document ).ready(function() {
+  	$('.fancybox').fancybox();
+  	//for the scroll links to top
+	$('a[href*=#]:not([href=#])').click(function() {
+	  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
+		|| location.hostname == this.hostname) {
+
+	    	var target = $(this.hash);
+	        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
+	        if (target.length) {
+	        	$('html,body').animate({
+	            	scrollTop: target.offset().top
+	            }, 1000);
+	            return false;
+	        }
+	    }
+	});
+  	
+  });
+  </script>
+
+</head>
+
+<body id="top">
+	
+<!--div style="background-gcolor:#e6e6e8; border-radius:10px;"><img src="images/icon_lock.png" alt="lock icon">mdlive.com<img src="images/icon_refresh.png" alt="refresh icon button"></div-->
+<div class="content_section">
+	<h2 class="small_text_header" style="float:left; text-align:left;">Sign Up</h2>
+	<div style="width:38%; text-align:center; display:inline-block;"><img src="images/logo_mdlive.png" alt="MDLIVE logo" class="logo_top" style="display:inline-block; margin-bottom:4em;"></div>
+	<h2 class="small_text_header" style="float:right; text-align:right;">1 of 2</h2>
+
+	<input id="" class="" name="" type="" placeholder="First Name">
+	<input id="" class="" name="" type="" placeholder="Last Name">
+	<input id="" class="" name="" type="" placeholder="E-mail">
+	<input id="" class="" name="" type="" placeholder="Username">
+	<input id="" class="" name="" type="" placeholder="Password">
+	<input id="" class="" name="" type="" placeholder="Confirm Password">
+
+	<button class="button_next">Next</button>
+
+</div>
+
+</body>
+</html>
