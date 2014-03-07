@@ -104,16 +104,16 @@ html { -webkit-font-smoothing: antialiased; }
 	    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
 	}
 
-	$("#email").focus(function() {
+	//$("#email").focus(function() {
 	  // scrollToAnchor('tag_email');
-	   	$( "#email_guidelines" ).slideDown("slow");
-		$("li.echeck10").addClass("guideline-error");
-		$( "#password_guidelines" ).slideUp("slow");
-		$( "#bottompadding" ).slideDown();    
-	});
-	$("#email").blur(function() {
-	   	$( "#email_guidelines" ).slideUp("slow");
-	});
+	//   	$( "#email_guidelines" ).slideDown("slow");
+	//	$("li.echeck10").addClass("guideline-error");
+	//	$( "#password_guidelines" ).slideUp("slow");
+	//	$( "#bottompadding" ).slideDown();    
+	//});
+	//$("#email").blur(function() {
+	//   	$( "#email_guidelines" ).slideUp("slow");
+	//});
 
 	$("#username").focus(function(){
 	  //scrollToAnchor('tag_username');
@@ -140,29 +140,25 @@ html { -webkit-font-smoothing: antialiased; }
 		$( "#password_guidelines" ).slideDown("slow");
 		$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
 	});
-//	$("#confirm_password").focus(function(){
-//	  scrollToAnchor('tag_confirm_password');
-//	    $( "#bottompadding" ).show();    
-//	});
 
 	//Validates that email is an actual email address
-	$('#email').first().keyup(function () {
-	    var $email = this.value;
-	    validateEmail($email);
-	});
+	//$('#email').first().keyup(function () {
+	//    var $email = this.value;
+	//    validateEmail($email);
+	//});
 
-	function validateEmail(email) {
-	    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-	    if (!emailReg.test(email)) {
-	        $("li.echeck10").addClass("guideline-error");
-		   	$("li.echeck10").removeClass("guideline-good");
-		   	console.log("error, email must be a valid email address type");
-	    } else {
-	        $("li.echeck10").addClass("guideline-good");
-		   	$("li.echeck10").removeClass("guideline-error");
-		   	console.log("email is valid");
-	    }
-	}
+	//function validateEmail(email) {
+	//    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
+	//    if (!emailReg.test(email)) {
+	//        $("li.echeck10").addClass("guideline-error");
+	//	   	$("li.echeck10").removeClass("guideline-good");
+	//	   	console.log("error, email must be a valid email address type");
+	//    } else {
+	//        $("li.echeck10").addClass("guideline-good");
+	//	   	$("li.echeck10").removeClass("guideline-error");
+	//	   	console.log("email is valid");
+	//    }
+	//}
 
 	//Validates Username
 	$("#username").bind("change paste keyup", function() {
@@ -283,7 +279,19 @@ html { -webkit-font-smoothing: antialiased; }
 	});
   });
   </script>
-
+  <SCRIPT LANGUAGE="JavaScript">
+	function gup( name )
+	{
+	  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
+	  var regexS = "[\\?&]"+name+"=([^&#]*)";
+	  var regex = new RegExp( regexS );
+	  var results = regex.exec( window.location.href );
+	  if( results == null )
+	    return "";
+	  else
+	    return "<div class=\"companyboxerror\">" + results[1] + " </div>";
+	}
+   </script>
 </head>
 
 <body id="top">

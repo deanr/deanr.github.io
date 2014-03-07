@@ -143,20 +143,22 @@ html { -webkit-font-smoothing: antialiased; }
 	
 <!--div style="background-gcolor:#e6e6e8; border-radius:10px;"><img src="images/icon_lock.png" alt="lock icon">mdlive.com<img src="images/icon_refresh.png" alt="refresh icon button"></div-->
 <div class="content_section">
+<form method="post" action="https://members.mdlive.com/group_member">
+
 	<img src="images/logo_mdlive.png" alt="MDLIVE logo" class="logo_top" >
 	<h1>Benefit Registration</h1>
 	<h2 style="width:70%;">Please enter your company or group name:</h2>
 
-	<input id="" class="" name="" type="" placeholder="Company or group name">
+	<input id="company_code" name="company_code" type="text" placeholder="Company or group name">
 	<button class="button_next" id="next_button">Next</button>
 	<div style="visibility:hidden; margin-left: 300px; font-size:1.6em; color:#ff4d41;">
 		<img src="images/error_triangle.png" style="float:left; margin-right:50px;">
-		Company or group name<br>
+		<script type="text/javascript">document.write(gup( 'error' ).replace(/%20/gi, " ").replace(/%2520/gi, " "));</script><br>
 		Jiffy Lube not found. 
 	</div>
 	<div class="assistance">Need assistance?</div>
 	<a href="tel:+18004006354" class="phone_link"><img src="images/icon_phone_blue.png" alt="phone icon">1-800-400-6354</a>
-
+</form>
 </div>
 
 </body>
