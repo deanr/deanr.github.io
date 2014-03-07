@@ -118,7 +118,7 @@ html { -webkit-font-smoothing: antialiased; }
 	$("#username").focus(function(){
 	  //scrollToAnchor('tag_username');
 	  $( "#username_guidelines" ).show("slow");
-	  $("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
+	  //$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
 	  $( "#password_guidelines" ).hide("slow");
 	  $( "#bottompadding" ).show();    
 	});
@@ -317,9 +317,9 @@ html { -webkit-font-smoothing: antialiased; }
 	<div id="username_guidelines" style="display:none;">
 		<label class="guidelines">Username Guidelines</label>
 		<ul class="guidelines">
-			<li class="ucheck1">Must be at least 6 characters in length</li>
-			<li class="ucheck2">Must contain at least one letter</li>
-			<li class="ucheck3">Cannot include special characters (&, %, *, etc.)</li>
+			<li class="ucheck1 guideline-error">Must be at least 6 characters in length</li>
+			<li class="ucheck2 guideline-error">Must contain at least one letter</li>
+			<li class="ucheck3 guideline-error">Cannot include special characters (&, %, *, etc.)</li>
 		</ul>
 	</div>
 	<a name="tag_password"/></a><input id="password" class="" name="" type="" placeholder="Password">
