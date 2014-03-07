@@ -55,81 +55,45 @@ input {border-radius: 10px; font-size: 3.5em; color:#7a7a7a; background-color: #
 .input_month, .input_day {width: 100px; text-align: center; display: inline-block; margin: 0 .5em .9em .5em; border-radius: 0;}
 .input_year { display: inline-block;width: 150px; margin: 0 .5em; border-radius: 0;}
 
-.label, .label_inside {font-size: 2.5em;}
+.label, .label_inside, span.checkbox {font-size: 2.5em;}
 .label {margin:0 30px 0 50px;}
 
 .toggle_btn {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; margin: 0 auto .9em auto; width: 315px; display: inline-block;}
 #male_toggle {border-radius: 10px 0 0 10px; border-right: 1px solid #ebebec; margin-left: 120px;}
 #female_toggle {border-radius: 0 10px 10px 0; border-left: 1px solid #bbbbbd;}
 
-/*input[type=checkbox] {
-   position: absolute;
-   top: -9999px;
-   left: -9999px;
-}*/
-label { 
-background-color: #fff;
-border-radius: 15px;
-border: 1px solid #cecece;	
-  display: inline-block;
-  margin: 60px 0 10px 50px;
-  padding: 35px;
-  cursor: pointer;
+
+input[type='checkbox'] {
+    margin-top: -30px;
 }
-
-
-/* SQUARED FOUR */
-.squaredFour {
-	position: relative;
+input[type='checkbox'] {
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeSpeed;
+    width: 75px;
+    height: 75px;
+    margin: 0 30px 0 50px;
+    margin-right: 1px;
+    display: inline-block;
+    position: relative;
+    cursor:pointer;
 }
-
-.squaredFour label {
-	cursor: pointer;
-	position: absolute;
-	width: 10px;
-	height: 10px;
-	top: 0;
-	border-radius: 15px;
-
-	background: #fff;
-
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fcfff4', endColorstr='#b3bead',GradientType=0 );
+input[type='checkbox']:after {
+    content:"";
+    vertical-align: middle;
+    text-align: center;
+    line-height: 13px;
+    position: absolute;
+    cursor: pointer;
+    height: 0px;
+    width: 0px;
+    left:15px;
+    top:30px;
+    font-size:75px;
+    -webkit-box-shadow: inset 0px 1px 1px #000, 0px 1px 0px #444;
+    -moz-box-shadow: inset 0px 1px 1px #000, 0px 1px 0px #444;
+    box-shadow: inset 0px 1px 1px #000, 0px 1px 0px #444;
+    background: #fff;
 }
-
-.squaredFour label:after {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
-	filter: alpha(opacity=0);
-	opacity: 0;
-	content: '';
-	position: absolute;
-	width: 20px;
-	height: 11px;
-	background: transparent;
-	top: 4px;
-	left: 4px;
-	border: 3px solid #cecece;
-	border-top: none;
-	border-right: none;
-
-	-webkit-transform: rotate(-45deg);
-	-moz-transform: rotate(-45deg);
-	-o-transform: rotate(-45deg);
-	-ms-transform: rotate(-45deg);
-	transform: rotate(-45deg);
-}
-
-.squaredFour label:hover::after {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=30)";
-	filter: alpha(opacity=30);
-	opacity: 0.5;
-}
-
-.squaredFour input[type=checkbox]:checked + label:after {
-	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=100)";
-	filter: alpha(opacity=100);
-	opacity: 1;
-}
-
 
 /*Dialog Section*/
 h1.modal {font-size:2em;}
