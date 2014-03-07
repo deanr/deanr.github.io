@@ -79,7 +79,7 @@ html { -webkit-font-smoothing: antialiased; }
   <link rel="stylesheet" href="jquery.fancybox.css">
 
   <script type="text/javascript">
-  $( document ).ready(function() {
+  $( document ).load(function() {
   	$('#next_button').click(function() {
 	  window.location='sign_up_form2.html';
 	});
@@ -165,9 +165,8 @@ html { -webkit-font-smoothing: antialiased; }
 	}
 
 	//Validates Username
-	$("#username").bind("change paste keyup focus", function() {
+	$("#username").bind("change paste keyup", function() {
 	  	console.log('value changed and validated');
-	  	scrollToAnchor('tag_username');
 	  // validates username character at least 6
 		$("label.guidelines").css('visibility', 'visible');
 		var username_length = $("#username").val().length;
