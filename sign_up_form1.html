@@ -62,7 +62,7 @@ li.guideline-error:before {content: url(images/check_no.png);}
 li.guideline-error {color: red; list-style-type: none; visibility: visible!important;}
 label.guidelines {display: inline-block; margin: 0 0 10px 50px;
 font-size: 2.8em;}
-li.ucheck1, li.ucheck2, li.ucheck3, li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8, li.echeck10, li.echeck9  {visibility: hidden;} 
+li.ucheck1, li.ucheck2, li.ucheck22, li.ucheck3, li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8, li.echeck10, li.echeck9  {visibility: hidden;} 
 
 /*Dialog Section*/
 h1.modal {font-size:2em;}
@@ -91,7 +91,7 @@ html { -webkit-font-smoothing: antialiased; }
 
 
   	$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
-  	$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
+  	$("li.ucheck1, li.ucheck2, li.ucheck22, li.ucheck3").addClass("guideline-error");
 
   	$('#next_button').click(function() {
 	  window.location='sign_up_form2.html';
@@ -202,6 +202,18 @@ html { -webkit-font-smoothing: antialiased; }
 		   	$("li.ucheck2").removeClass("guideline-good");
 		   	console.log("no alpha entered");
         }
+        // validates password at least 1 number
+		var username_num = $("#username").val();
+		var patt=/[0-9]/;
+		if(patt.test(password_num)){
+            $("li.ucheck22").addClass("guideline-good");
+		   	$("li.ucheck22").removeClass("guideline-error");
+		   	console.log("1 numeric");
+        }else{
+            $("li.ucheck22").addClass("guideline-error");
+		   	$("li.ucheck22").removeClass("guideline-good");
+		   	console.log("no numeric entered");
+        }
         // validates username no special char
 		var username_special = $("#username").val();
 		var spechar=/[#;&,.+*~%_\-`\':"!^${}[\]()=>|\/@]/;
@@ -232,7 +244,7 @@ html { -webkit-font-smoothing: antialiased; }
 	//Validates Password
 	$("#password, #confirm_password").bind("change paste keyup", function() {
 	  	console.log('value changed and validated');
-	   // validates username character at least 6
+	   // validates password character at least 6
 		$("label.guidelines").css('visibility', 'visible');
 		var password_length = $("#password").val().length;
     	if (password_length > 6) {
@@ -243,7 +255,7 @@ html { -webkit-font-smoothing: antialiased; }
 			$("li.ucheck4").addClass("guideline-error");
 		   	$("li.ucheck4").removeClass("guideline-good");console.log('is < than 6');
 		}
-		// validates username at least 1 letter
+		// validates password at least 1 letter
 		var password_alpha = $("#password").val();
 		var patt=/[a-zA-Z]/;
 		if(patt.test(password_alpha)){
@@ -255,7 +267,7 @@ html { -webkit-font-smoothing: antialiased; }
 		   	$("li.ucheck5").removeClass("guideline-good");
 		   	console.log("no alpha entered");
         }
-        // validates username at least 1 number
+        // validates password at least 1 number
 		var password_num = $("#password").val();
 		var patt=/[0-9]/;
 		if(patt.test(password_num)){
@@ -344,7 +356,8 @@ html { -webkit-font-smoothing: antialiased; }
 		<ul class="guidelines">
 			<li class="ucheck1">Must be at least 6 characters in length</li>
 			<li class="ucheck2">Must contain at least one letter</li>
-			<li class="ucheck3">Cannot include special characters (&, %, *, etc.)</li>
+			<li class="ucheck22">Must contain at least one number</li>
+			<li class="ucheck3">No special characters (&, %, *, etc.)</li>
 		</ul>
 	</div>
 	<a name="tag_password"/></a>
