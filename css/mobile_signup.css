@@ -49,13 +49,12 @@ input {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e
 }
 
 /*Form Validation*/
-ul.guidelines {width: 90%; display: inline-block; margin:0 0 40px 10px; font-size: 1em;}
+ul.guidelines {width: 90%; display: inline-block; margin:0 0 40px 10px; font-size: 1em!important;}
 li.guideline-good:before {content: url(../images/check_yes.png);}
 li.guideline-good {color: green; list-style-type: none; visibility:visible!important;}
 li.guideline-error:before {content: url(../images/check_no.png);}
 li.guideline-error {color: red; list-style-type: none; visibility: visible!important;}
-label.guidelines {display: inline-block; margin: 0 0 10px 50px;
-font-size: 2.8em;}
+label.guidelines {display: inline-block; margin: 0 0 10px 50px; font-size: 2.8em;}
 li.ucheck1, li.ucheck2, li.ucheck22, li.ucheck3, li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8, li.echeck10, li.echeck9  {visibility: hidden;}
 
 /*Form Sections*/
