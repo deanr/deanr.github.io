@@ -64,7 +64,7 @@ select, input {border-radius: 10px; font-size: 3.5em; color:#000; background-col
     color:    #7a7a7a;
 }
 
-.input_state {width: 50%; display:inline-block; margin: 0 .5em .9em 50px;}
+.input_state {width: 49%; display:inline-block; margin: 0 .5em .9em 50px;}
 .input_zip {width: 30%; display: inline-block; margin: 0 .5em .9em .5em;}
 .input_month, .input_day {width: 150px; text-align: center; display: inline-block; margin: 0 .1em .9em .1em; border-radius: 0;}
 .input_year { display: inline-block;width: 140px; margin: 0 .4em; border-radius: 0;}
