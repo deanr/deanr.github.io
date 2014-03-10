@@ -127,11 +127,11 @@ scrollToMe: function () {
 	  $('#username').scrollToMe();
 	  $( "#username_guidelines" ).slideDown();
 	  $("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
-	  $( "#password_guidelines" ).slideUp();
+	  //$( "#password_guidelines" ).slideUp();
 	  //$( "#bottompadding" ).show();    
 	});
 	$("#username").blur(function() {
-	   	$( "#username_guidelines" ).slideUp();
+	   	//$( "#username_guidelines" ).slideUp();
 	});
 
 	$("#password").focus(function() {
@@ -143,7 +143,7 @@ scrollToMe: function () {
 	});
 
 	$("#first_name, #last_name").focus(function(){
-		$( "#password_guidelines" ).slideUp();
+		//$( "#password_guidelines" ).slideUp();
 	});
 	$("#confirm_password").focus(function(){
 		$( "#password_guidelines" ).slideDown();
