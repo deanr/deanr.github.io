@@ -24,6 +24,9 @@ h3 {font-size: 3.5em; background-color: #e1e1e1; margin: 0; font-weight: 300; pa
 h4 {font-size: 2.5em; font-weight: 400; padding: 0 0 0 50px; background: url('');}
 
 p {margin:40px 10px 40px 50px; font-size: 3em; width: auto; background: url('');}
+
+.anchor {margin-top: -30px; display: block; padding-bottom: 30px;  }
+
 a {color:#007aff; text-decoration: none; }
 
 .button_yn, .button_next {border-radius: 10px; background-color: #d1d3d4; width: 90%; border: 0; padding: 30px; font-size: 5em; font-weight: lighter; margin:40px auto 80px auto; text-align: center; display: block;}
@@ -82,7 +85,11 @@ html { -webkit-font-smoothing: antialiased; }
   $( document ).ready(function() {
 	$('#password').on("focus", function(ev) {
 	    var e = ev.originalEvent;
-	    $( "#password_guidelines" ).slideDown('slow');
+	    $( "#password_guidelines1" ).slideDown('slow');
+	});
+	$('#confirm_password').on("focus", function(ev) {
+	    var e = ev.originalEvent;
+	    $( "#password_guidelines2" ).slideDown('slow');
 	});
 	$('#username').on("focus", function(ev) {
 	    var e = ev.originalEvent;
@@ -349,7 +356,7 @@ html { -webkit-font-smoothing: antialiased; }
 			<li class="echeck10">Emails must be a valid Email type</li>
 		</ul>
 	</div>
-	<a name="tag_username"/></a>
+	<a class="anchor" name="tag_username"/></a>
 	<input id="username" class="" name="" type="" placeholder="Username">
 	<div id="username_guidelines" style="display:none;">
 		<label class="guidelines">Username Guidelines</label>
@@ -360,17 +367,20 @@ html { -webkit-font-smoothing: antialiased; }
 			<li class="ucheck3">No special characters (&, %, *, etc.)</li>
 		</ul>
 	</div>
-	<a name="tag_password"/></a>
+	<a class="anchor" name="tag_password"/></a>
 	<input id="password" class="" name="" type="" placeholder="Password">
-	<br>
-	<input id="confirm_password" class="" name="" type="" placeholder="Confirm Password">
-	<div id="password_guidelines" style="display:none;">
+	<div id="password_guidelines1" style="display:none;">
 		<label class="guidelines">Password Guidelines</label>
 		<ul class="guidelines">
 			<li class="ucheck6">Cannot be the same as your Username</li>
 			<li class="ucheck4">Must contain at least 7 characters</li>
 			<li class="ucheck5">Must contain at least one letter</li>
 			<li class="ucheck7">Must contain at least one number</li>
+		</ul>
+	</div>
+	<input id="confirm_password" class="" name="" type="" placeholder="Confirm Password">
+	<div id="password_guidelines2" style="display:none;">
+		<ul class="guidelines">
 			<li class="ucheck8">Passwords must match</li>
 		</ul>
 	</div>
