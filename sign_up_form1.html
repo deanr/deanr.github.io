@@ -205,7 +205,7 @@ html { -webkit-font-smoothing: antialiased; }
         // validates password at least 1 number
 		var username_num = $("#username").val();
 		var patt=/[0-9]/;
-		if(patt.test(password_num)){
+		if(patt.test(username_num)){
             $("li.ucheck22").addClass("guideline-good");
 		   	$("li.ucheck22").removeClass("guideline-error");
 		   	console.log("1 numeric");
