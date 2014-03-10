@@ -136,9 +136,13 @@ html { -webkit-font-smoothing: antialiased; }
 
 	$("#password").focus(function() {
 	   scrollToAnchor('tag_password');
-	   $( "#password_guidelines" ).slideDown();
+	   //$( "#password_guidelines" ).slideDown();
 	   //$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
 	   $( "#bottompadding" ).slideDown();    
+	});
+	$(window).on("touchstart", function(ev) {
+	    var e = ev.originalEvent;
+	    $( "#password_guidelines" ).slideDown();
 	});
 
 	$("#first_name, #last_name").focus(function(){
@@ -340,7 +344,7 @@ html { -webkit-font-smoothing: antialiased; }
 	</div>
 	<a name="tag_password"/></a><input id="password" class="" name="" type="" placeholder="Password">
 	<input id="confirm_password" class="" name="" type="" placeholder="Confirm Password">
-	<div id="password_guidelines">
+	<div id="password_guidelines" style="display:none;">
 		<label class="guidelines">Password Guidelines</label>
 		<ul class="guidelines">
 			<li class="ucheck6">Cannot be the same as your Username</li>
