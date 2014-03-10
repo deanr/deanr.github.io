@@ -82,7 +82,7 @@ html { -webkit-font-smoothing: antialiased; }
   $( document ).ready(function() {
   	$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
   	$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
-  	
+
   	$('#next_button').click(function() {
 	  window.location='sign_up_form2.html';
 	});
@@ -120,7 +120,7 @@ html { -webkit-font-smoothing: antialiased; }
 
 	$("#username").focus(function(){
 	  scrollToAnchor('tag_username');
-	  $( "#username_guidelines" ).slideDown();
+	  //$( "#username_guidelines" ).slideDown();
 	  //$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
 	  //$( "#password_guidelines" ).slideUp();
 	  //$( "#bottompadding" ).show();    
@@ -128,6 +128,11 @@ html { -webkit-font-smoothing: antialiased; }
 	$("#username").blur(function() {
 	   	//$( "#username_guidelines" ).slideUp();
 	});
+	$(window).on("touchstart", function(ev) {
+	    var e = ev.originalEvent;
+	    $( "#username_guidelines" ).slideDown();
+	});
+
 
 	$("#password").focus(function() {
 	   scrollToAnchor('tag_password');
@@ -325,7 +330,7 @@ html { -webkit-font-smoothing: antialiased; }
 		</ul>
 	</div>
 	<a name="tag_username"/></a><input id="username" class="" name="" type="" placeholder="Username">
-	<div id="username_guidelines">
+	<div id="username_guidelines" style="display:none;">
 		<label class="guidelines">Username Guidelines</label>
 		<ul class="guidelines">
 			<li class="ucheck1">Must be at least 6 characters in length</li>
