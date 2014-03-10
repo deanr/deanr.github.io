@@ -72,7 +72,7 @@ select, input {border-radius: 10px; font-size: 3.5em; color:#000; background-col
 
 .label, .label_inside {font-size: 2.5em;}
  span.checkbox {font-size: 3em;}
-.label {margin:0 30px .9em 50px;}
+.label {padding:0 30px .9em 50px;}
 
 .toggle_btn {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; margin: 0 auto .9em auto; width: 290px; display: inline-block;}
 #male_toggle {border-radius: 10px 0 0 10px; border-right: 1px solid #ebebec; margin-left: 120px;}
