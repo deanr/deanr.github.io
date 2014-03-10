@@ -80,11 +80,11 @@ html { -webkit-font-smoothing: antialiased; }
 
   <script type="text/javascript">
   $( document ).ready(function() {
-	$('#password').on("touchstart", function(ev) {
+	$('#password').on("focus", function(ev) {
 	    var e = ev.originalEvent;
 	    $( "#password_guidelines" ).slideDown('slow');
 	});
-	$('#username').on("touchstart", function(ev) {
+	$('#username').on("focus", function(ev) {
 	    var e = ev.originalEvent;
 	    $( "#username_guidelines" ).slideDown('slow');
 	});
