@@ -48,7 +48,7 @@ a {color:#007aff; text-decoration: none; }
 .assistance{text-align:center; font-size:2.5em; margin-top: 60px;}
 
 /*Form Sections*/
-input {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; margin: 0 auto .6em auto; width: 85%; display: block;}
+input {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; /*margin: 0 auto .6em auto;*/margin: 0 auto .1em auto; width: 85%; display: block;}
 
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    #7a7a7a;
@@ -123,10 +123,9 @@ html { -webkit-font-smoothing: antialiased; }
 	  //$( "#username_guidelines" ).slideDown();
 	  //$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
 	  //$( "#password_guidelines" ).slideUp();
-	  //$( "#bottompadding" ).show();    
 	});
 	$("#username").blur(function() {
-	   	//$( "#username_guidelines" ).slideUp();
+	   	$( "#username_guidelines" ).slideUp();
 	});
 	$(window).on("touchstart", function(ev) {
 	    var e = ev.originalEvent;
@@ -138,20 +137,22 @@ html { -webkit-font-smoothing: antialiased; }
 	   scrollToAnchor('tag_password');
 	   //$( "#password_guidelines" ).slideDown();
 	   //$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
-	   $( "#bottompadding" ).slideDown();    
+	   //$( "#bottompadding" ).slideDown();    
+	});
+	$("#password, #confirm_password").blur(function() {
+	   	$( "#password_guidelines" ).slideUp();
 	});
 	$(window).on("touchstart", function(ev) {
 	    var e = ev.originalEvent;
 	    $( "#password_guidelines" ).slideDown();
 	});
-
-	$("#first_name, #last_name").focus(function(){
+	//$("#first_name, #last_name").focus(function(){
 		//$( "#password_guidelines" ).slideUp();
-	});
-	$("#confirm_password").focus(function(){
-		$( "#password_guidelines" ).slideDown();
+	//});
+	//$("#confirm_password").focus(function(){
+	//	$( "#password_guidelines" ).slideDown();
 		//$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
-	});
+	//});
 
 	//Validates that email is an actual email address
 	//$('#email').first().keyup(function () {
@@ -325,15 +326,19 @@ html { -webkit-font-smoothing: antialiased; }
 	<table>
 
 	<input id="first_name" class="" name="" type="" placeholder="First Name">
+	<br>
 	<input id="last_name" class="" name="" type="" placeholder="Last Name">
-	<!--a name="tag_email"/></a--><input id="email" class="" name="" type="" placeholder="E-mail">
+	<br>
+	<!--a name="tag_email"/></a><br>-->
+	<input id="email" class="" name="" type="" placeholder="E-mail">
 	<div id="email_guidelines" style="display:none;">
 		<label class="guidelines">Email Guidelines</label>
 		<ul class="guidelines">
 			<li class="echeck10">Emails must be a valid Email type</li>
 		</ul>
 	</div>
-	<a name="tag_username"/></a><input id="username" class="" name="" type="" placeholder="Username">
+	<a name="tag_username"/></a><br>
+	<input id="username" class="" name="" type="" placeholder="Username">
 	<div id="username_guidelines" style="display:none;">
 		<label class="guidelines">Username Guidelines</label>
 		<ul class="guidelines">
@@ -342,7 +347,9 @@ html { -webkit-font-smoothing: antialiased; }
 			<li class="ucheck3">Cannot include special characters (&, %, *, etc.)</li>
 		</ul>
 	</div>
-	<a name="tag_password"/></a><input id="password" class="" name="" type="" placeholder="Password">
+	<a name="tag_password"/></a><br>
+	<input id="password" class="" name="" type="" placeholder="Password">
+	<br>
 	<input id="confirm_password" class="" name="" type="" placeholder="Confirm Password">
 	<div id="password_guidelines" style="display:none;">
 		<label class="guidelines">Password Guidelines</label>
