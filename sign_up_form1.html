@@ -116,7 +116,8 @@ html { -webkit-font-smoothing: antialiased; }
 	//});
 
 	$("#username").focus(function(){
-	  scrollToAnchor('tag_username');
+	  //scrollToAnchor('tag_username');
+	  window.location = '#tag_username';
 	  $( "#username_guidelines" ).slideDown();
 	  $("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
 	  $( "#password_guidelines" ).slideUp();
@@ -127,7 +128,8 @@ html { -webkit-font-smoothing: antialiased; }
 	});
 
 	$("#password").focus(function() {
-	   scrollToAnchor('tag_password');
+	   //scrollToAnchor('tag_password');
+       window.location = '#tag_password';
        $( "#password_guidelines" ).slideDown();
 	   $("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
 	   $( "#bottompadding" ).slideDown();    
