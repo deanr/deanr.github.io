@@ -17,22 +17,6 @@
   	$('#next_button').click(function() {
 	  window.location='sign_up_completed.html';
 	});
-	//for the scroll links to top
-	$('a[href*=#]:not([href=#])').click(function() {
-	  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
-		|| location.hostname == this.hostname) {
-
-	    	var target = $(this.hash);
-	        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-	        if (target.length) {
-	        	$('html,body').animate({
-	            	scrollTop: target.offset().top
-	            }, 1000);
-	            return false;
-	        }
-	    }
-	});
-  	
   });
   </script>
 
@@ -186,7 +170,8 @@
 		<input type="checkbox" value="None" id="squaredFour" name="check">
 		<label for="squaredFour"></label>
 	</div-->
-	<button class="button_next" id="next_button">Next</button>
+	
+	<a href="sign_up_completed.html"><button class="button_next" id="next_button">Next</button></a>
 
 </div>
 
