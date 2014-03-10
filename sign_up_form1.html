@@ -80,6 +80,16 @@ html { -webkit-font-smoothing: antialiased; }
 
   <script type="text/javascript">
   $( document ).ready(function() {
+	$('#password').on("touchstart", function(ev) {
+	    var e = ev.originalEvent;
+	    $( "#password_guidelines" ).slideDown();
+	});
+	$('#username').on("touchstart", function(ev) {
+	    var e = ev.originalEvent;
+	    $( "#username_guidelines" ).slideDown();
+	});
+
+
   	$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
   	$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
 
@@ -117,15 +127,12 @@ html { -webkit-font-smoothing: antialiased; }
 	//$("#email").blur(function() {
 	//   	$( "#email_guidelines" ).slideUp("slow");
 	//});
-
-	$("#username").focus(function(){
 	
-		$(window).on("touchstart", function(ev) {
-		    var e = ev.originalEvent;
-		    $( "#username_guidelines, #password_guidelines" ).slideDown();
-		});
-
-	  
+	$('#username').on("touchstart", function(ev) {
+	    var e = ev.originalEvent;
+	//});
+	//$("#username").focus(function(){
+	//$( "#password_guidelines" ).slideUp();
 	  scrollToAnchor('tag_username');
 	  //$( "#username_guidelines" ).slideDown();
 	  //$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
@@ -137,13 +144,7 @@ html { -webkit-font-smoothing: antialiased; }
 	//});
 
 	$("#password").focus(function() {
-		$(window).on("touchstart", function(ev) {
-		    var e = ev.originalEvent;
-		    $( "#username_guidelines, #password_guidelines" ).slideDown();
-		});
-	
-		$( "#username_guidelines" ).slideUp();
-		
+	//$( "#username_guidelines" ).slideUp();
 	   scrollToAnchor('tag_password');
 	   //$( "#password_guidelines" ).slideDown();
 	   //$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
