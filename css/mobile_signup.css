@@ -30,7 +30,7 @@ a {color:#007aff; text-decoration: none; }
 .to_top_link img {margin:10px 0 0 20px; position: absolute;}
 
 ul {width: 35%; display: inline-block; margin:0 0 40px 70px;}
-li {list-style-type: none; margin-bottom:15px;}
+li {list-style-type: none; font-size: 3.1em; margin-bottom:15px;}
 
 ul.checkmark {width:auto; display: inline-block; margin:3em 0 0 40px; list-style-type:none; }
 ul.checkmark > li {font-size: 2.5em; margin-bottom:35px; padding:0 10px 0 1.5em; width: auto; min-height: 50px;
