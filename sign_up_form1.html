@@ -80,13 +80,9 @@ html { -webkit-font-smoothing: antialiased; }
 
   <script type="text/javascript">
   $( document ).ready(function() {
-jQuery.fn.extend({
-scrollToMe: function () {
-    var x = jQuery(this).offset().top - 100;
-    jQuery('html,body').animate({scrollTop: x}, 500);
-}});
-
-
+  	$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
+  	$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
+  	
   	$('#next_button').click(function() {
 	  window.location='sign_up_form2.html';
 	});
@@ -123,10 +119,9 @@ scrollToMe: function () {
 	//});
 
 	$("#username").focus(function(){
-	  //scrollToAnchor('tag_username');
-	  $('#username').scrollToMe();
+	  scrollToAnchor('tag_username');
 	  $( "#username_guidelines" ).slideDown();
-	  $("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
+	  //$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
 	  //$( "#password_guidelines" ).slideUp();
 	  //$( "#bottompadding" ).show();    
 	});
@@ -135,10 +130,9 @@ scrollToMe: function () {
 	});
 
 	$("#password").focus(function() {
-	   //scrollToAnchor('tag_password');
-	   $('#password').scrollToMe();
-       $( "#password_guidelines" ).slideDown();
-	   $("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
+	   scrollToAnchor('tag_password');
+	   $( "#password_guidelines" ).slideDown();
+	   //$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
 	   $( "#bottompadding" ).slideDown();    
 	});
 
@@ -147,7 +141,7 @@ scrollToMe: function () {
 	});
 	$("#confirm_password").focus(function(){
 		$( "#password_guidelines" ).slideDown();
-		$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
+		//$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
 	});
 
 	//Validates that email is an actual email address
@@ -330,7 +324,7 @@ scrollToMe: function () {
 			<li class="echeck10">Emails must be a valid Email type</li>
 		</ul>
 	</div>
-	<!--a name="tag_username"/></a--><input id="username" class="" name="" type="" placeholder="Username">
+	<a name="tag_username"/></a><input id="username" class="" name="" type="" placeholder="Username">
 	<div id="username_guidelines">
 		<label class="guidelines">Username Guidelines</label>
 		<ul class="guidelines">
@@ -339,7 +333,7 @@ scrollToMe: function () {
 			<li class="ucheck3">Cannot include special characters (&, %, *, etc.)</li>
 		</ul>
 	</div>
-	<!--a name="tag_password"/></a--><input id="password" class="" name="" type="" placeholder="Password">
+	<a name="tag_password"/></a><input id="password" class="" name="" type="" placeholder="Password">
 	<input id="confirm_password" class="" name="" type="" placeholder="Confirm Password">
 	<div id="password_guidelines">
 		<label class="guidelines">Password Guidelines</label>
