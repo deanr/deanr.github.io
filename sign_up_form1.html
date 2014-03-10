@@ -85,7 +85,7 @@ html { -webkit-font-smoothing: antialiased; }
 	    $( "#username_guidelines, #password_guidelines" ).slideDown();
 	});
 
-  	
+
   	$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
   	$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
 
@@ -125,6 +125,9 @@ html { -webkit-font-smoothing: antialiased; }
 	//});
 
 	$("#username").focus(function(){
+	
+		$( "#password_guidelines" ).slideUp();
+	  
 	  scrollToAnchor('tag_username');
 	  //$( "#username_guidelines" ).slideDown();
 	  //$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
@@ -136,6 +139,9 @@ html { -webkit-font-smoothing: antialiased; }
 	//});
 
 	$("#password").focus(function() {
+		
+		$( "#username_guidelines" ).slideUp();
+		
 	   scrollToAnchor('tag_password');
 	   //$( "#password_guidelines" ).slideDown();
 	   //$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
