@@ -23,14 +23,14 @@ a {color:#007aff; text-decoration: none; }
 .button_yn, .button_next {border-radius: 10px; background-color: #d1d3d4; width: 90%; border: 0; padding: 30px; font-size: 5em; font-weight: lighter; margin:40px auto 80px auto; text-align: center; display: block;}
 .button_yn:hover, .button_next:hover {background-color: #959595; color: #fff;}
 
-.phone_link {color:#007aff; text-decoration: none; font-size:5em; text-align: center; display: block; margin: 20px .5em 135px .5me;}
+.phone_link {color:#007aff; text-decoration: none; font-size:5em; text-align: center; display: block; margin: 20px .5em 25px .5em;}
 .phone_link img {margin-right: .25em;}
 
 .to_top_link {color:#007aff; text-decoration: none; font-size:60px; display: block; margin: 60px 0 60px 50px; font-weight: 300; }
-.to_top_link img {margin:0 0 0 20px; position: absolute;}
+.to_top_link img {margin:10px 0 0 20px; position: absolute;}
 
 ul {width: 35%; display: inline-block; margin:0 0 40px 70px;}
-li {list-style-type: none; font-size: 2.5em; margin-bottom:15px;}
+li {list-style-type: none; margin-bottom:15px;}
 
 ul.checkmark {width:auto; display: inline-block; margin:3em 0 0 40px; list-style-type:none; }
 ul.checkmark > li {font-size: 2.5em; margin-bottom:35px; padding:0 10px 0 1.5em; width: auto; min-height: 50px;
