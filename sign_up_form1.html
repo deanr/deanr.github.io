@@ -80,6 +80,12 @@ html { -webkit-font-smoothing: antialiased; }
 
   <script type="text/javascript">
   $( document ).ready(function() {
+	$(window).on("touchstart", function(ev) {
+	    var e = ev.originalEvent;
+	    $( "#username_guidelines, #password_guidelines" ).slideDown();
+	});
+
+  	
   	$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
   	$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
 
@@ -128,23 +134,14 @@ html { -webkit-font-smoothing: antialiased; }
 	//$("#username").blur(function() {
 	   	//$( "#username_guidelines" ).slideUp();
 	//});
-	$(window).on("touchstart", function(ev) {
-	    var e = ev.originalEvent;
-	    $( "#username_guidelines" ).slideDown();
-	});
-
 
 	$("#password").focus(function() {
 	   scrollToAnchor('tag_password');
 	   //$( "#password_guidelines" ).slideDown();
 	   //$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
-	   $( "#bottompadding" ).slideDown();    
+	   //$( "#bottompadding" ).slideDown();    
 	});
-	$(window).on("touchstart", function(ev) {
-	    var e = ev.originalEvent;
-	    $( "#password_guidelines" ).slideDown();
-	});
-
+	
 	//$("#first_name, #last_name").focus(function(){
 		//$( "#password_guidelines" ).slideUp();
 	//});
