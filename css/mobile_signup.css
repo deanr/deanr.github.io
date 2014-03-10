@@ -14,7 +14,7 @@ h2.small_text_header {display: inline-block; width: auto; font-size: 3em; font-s
 h3 {font-size: 3.5em; background-color: #e1e1e1; margin: 0; font-weight: 300; padding: 20px 30px 20px 50px; border-top: 1px #d6d5d5 solid;  border-bottom: 1px #d6d5d5 solid;}
 h4 {font-size: 2.5em; font-weight: 400; padding: 0 0 0 50px; background: url('');}
 
-p {margin:40px 10px 40px 50px; font-size: 3em; width: auto; background: url('');}
+p {margin:40px 10px 40px 50px; font-size: 3.1em; width: auto; background: url('');}
 
 .anchor {margin-top: -30px; display: block; padding-bottom: 30px;  }
 
@@ -26,7 +26,7 @@ a {color:#007aff; text-decoration: none; }
 .phone_link {color:#007aff; text-decoration: none; font-size:5em; text-align: center; display: block; margin: 20px .5em 135px .5me;}
 .phone_link img {margin-right: .25em;}
 
-.to_top_link {color:#007aff; text-decoration: none; font-size:60px; display: block; margin: 60px 0 60px 50px; font-weight: lighter; }
+.to_top_link {color:#007aff; text-decoration: none; font-size:60px; display: block; margin: 60px 0 60px 50px; font-weight: 300; }
 .to_top_link img {margin:0 0 0 20px; position: absolute;}
 
 ul {width: 35%; display: inline-block; margin:0 0 40px 70px;}
@@ -58,7 +58,7 @@ label.guidelines {display: inline-block; margin: 0 0 10px 50px; font-size: 2.8em
 li.ucheck1, li.ucheck2, li.ucheck22, li.ucheck3, li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8, li.echeck10, li.echeck9  {visibility: hidden;}
 
 /*Form Sections*/
-input {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; margin: 0 auto .6em auto; width: 85%; display: block;}
+select, input {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; margin: 0 auto .6em auto; width: 85%; display: block;}
 
 ::-webkit-input-placeholder { /* WebKit browsers */
     color:    #7a7a7a;
