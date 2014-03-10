@@ -82,11 +82,11 @@ html { -webkit-font-smoothing: antialiased; }
   $( document ).ready(function() {
 	$('#password').on("touchstart", function(ev) {
 	    var e = ev.originalEvent;
-	    $( "#password_guidelines" ).slideDown();
+	    $( "#password_guidelines" ).slideDown('slow');
 	});
 	$('#username').on("touchstart", function(ev) {
 	    var e = ev.originalEvent;
-	    $( "#username_guidelines" ).slideDown();
+	    $( "#username_guidelines" ).slideDown('slow');
 	});
 
 
