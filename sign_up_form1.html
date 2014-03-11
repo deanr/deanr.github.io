@@ -12,6 +12,7 @@
 
   <script type="text/javascript">
   $( document ).ready(function() {
+  	//Displays guidelines on focus of inputs
 	$('#password').on("focus", function(ev) {
 	    var e = ev.originalEvent;
 	    $( "#password_guidelines1" ).slideDown('slow');
@@ -24,18 +25,13 @@
 	    var e = ev.originalEvent;
 	    $( "#username_guidelines" ).slideDown('slow');
 	});
-
-  	$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
-  	$("li.ucheck1, li.ucheck2, li.ucheck22, li.ucheck3").addClass("guideline-error");
-
-  	$('#next_button').click(function() {
-	  window.location='sign_up_form2.html';
-	});
+	//displays the red style for the guidelines as default
+  	$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8, li.ucheck1, li.ucheck2, li.ucheck22, li.ucheck3").addClass("guideline-error");
+  	
 	//for the scroll links to top
 	$('a[href*=#]:not([href=#])').click(function() {
 	  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
 		|| location.hostname == this.hostname) {
-
 	    	var target = $(this.hash);
 	        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 	        if (target.length) {
@@ -47,68 +43,23 @@
 	    }
 	});
   	//scroll and expand inputs and guidelines
+//??do we need this???
   	function scrollToAnchor(aid){
 	    var aTag = $("a[name='"+ aid +"']");
 	    $('html,body').animate({scrollTop: aTag.offset().top},'slow');
 	}
 
-	//$("#email").focus(function() {
-	  // scrollToAnchor('tag_email');
-	//   	$( "#email_guidelines" ).slideDown("slow");
-	//	$("li.echeck10").addClass("guideline-error");
-	//	$( "#password_guidelines" ).slideUp("slow");
-	//	$( "#bottompadding" ).slideDown();    
-	//});
-	//$("#email").blur(function() {
-	//   	$( "#email_guidelines" ).slideUp("slow");
-	//});
 
+	//Scrolls to input when focused
 	$("#username").focus(function(){
-	//$( "#password_guidelines" ).slideUp();
 	  scrollToAnchor('tag_username');
-	  //$( "#username_guidelines" ).slideDown();
-	  //$("li.ucheck1, li.ucheck2, li.ucheck3").addClass("guideline-error");
-	  //$( "#password_guidelines" ).slideUp();
-	  //$( "#bottompadding" ).show();    
 	});
-	//$("#username").blur(function() {
-	   	//$( "#username_guidelines" ).slideUp();
-	//});
 
 	$("#password").focus(function() {
-	//$( "#username_guidelines" ).slideUp();
 	   scrollToAnchor('tag_password');
-	   //$( "#password_guidelines" ).slideDown();
-	   //$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
-	   //$( "#bottompadding" ).slideDown();    
 	});
 	
-	//$("#first_name, #last_name").focus(function(){
-		//$( "#password_guidelines" ).slideUp();
-	//});
-	//$("#confirm_password").focus(function(){
-	//	$( "#password_guidelines" ).slideDown();
-		//$("li.ucheck4, li.ucheck5, li.ucheck6, li.ucheck7, li.ucheck8").addClass("guideline-error");
-	//});
 
-	//Validates that email is an actual email address
-	//$('#email').first().keyup(function () {
-	//    var $email = this.value;
-	//    validateEmail($email);
-	//});
-
-	//function validateEmail(email) {
-	//    var emailReg = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,4})?$/;
-	//    if (!emailReg.test(email)) {
-	//        $("li.echeck10").addClass("guideline-error");
-	//	   	$("li.echeck10").removeClass("guideline-good");
-	//	   	console.log("error, email must be a valid email address type");
-	//    } else {
-	//        $("li.echeck10").addClass("guideline-good");
-	//	   	$("li.echeck10").removeClass("guideline-error");
-	//	   	console.log("email is valid");
-	//    }
-	//}
 
 	//Validates Username
 	$("#username").bind("change paste keyup", function() {
@@ -161,7 +112,7 @@
 		   	$("li.ucheck3").removeClass("guideline-error");
 		   	console.log("contains special char");
         }
-        // validates password is not the same as password 
+        // validates username is not the same as password 
 		var username = $("#username").val();
 		var sameasuser = $("#password").val();
 		if(sameasuser == username){
@@ -174,7 +125,6 @@
 		   	console.log("error, password is the same as username");
         }
 	});
-
 	
 	//Validates Password
 	$("#password, #confirm_password").bind("change paste keyup", function() {
@@ -241,19 +191,6 @@
 	});
   });
   </script>
-  <script>
-	function gup( name )
-	{
-	  name = name.replace(/[\[]/,"\\\[").replace(/[\]]/,"\\\]");
-	  var regexS = "[\\?&]"+name+"=([^&#]*)";
-	  var regex = new RegExp( regexS );
-	  var results = regex.exec( window.location.href );
-	  if( results == null )
-	    return "";
-	  else
-	    return "<div class=\"companyboxerror\">" + results[1] + " </div>";
-	}
-   </script>
 </head>
 
 <body id="top">
@@ -306,7 +243,7 @@
 		</ul>
 	</div>
 	
-	<button class="button_next" id="next_button">Next</button>
+	<a href="sign_up_form2.html"><button class="button_next" id="next_button">Next</button></a>
 
 </div>
 

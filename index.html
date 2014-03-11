@@ -14,7 +14,6 @@
 	$('a[href*=#]:not([href=#])').click(function() {
 	  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
 		|| location.hostname == this.hostname) {
-
 	    	var target = $(this.hash);
 	        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
 	        if (target.length) {
@@ -24,12 +23,6 @@
 	            return false;
 	        }
 	    }
-	});
-  	$('#no_button').click(function() {
-	  window.location='sign_up_form1.html';
-	});
-	$('#yes_button').click(function() {
-	  window.location='benefit_registration.html';
 	});
   });
   </script>
@@ -44,8 +37,8 @@
 	<h1>Welcome to MDLIVE</h1>
 	<h2>Do you get MDLIVE as a benefit through your employer or group?</h2>
 
-	<button class="button_yn" id="yes_button">Yes</button>
-	<button class="button_yn" id="no_button">No </button>
+	<a href="benefit_registration.html"><button class="button_yn" id="yes_button">Yes</button></a>
+	<a href="sign_up_form1.html"><button class="button_yn" id="no_button">No </button></a>
 
 	<div class="assistance">Need assistance?</div>
 	<a href="tel:+18004006354" class="phone_link"><img src="images/icon_phone_blue.png" alt="phone icon">1-800-400-6354</a>

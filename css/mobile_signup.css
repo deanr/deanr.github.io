@@ -65,24 +65,21 @@ select, input {border-radius: 10px; font-size: 3.5em; color:#000; background-col
     color:    #7a7a7a;
 }
 
+.label, .label_inside {font-size: 2.5em;}
+ span.checkbox {font-size: 3em;}
+.label {padding:0 30px .9em 50px;}
+
 .input_state {width: 49%; display:inline-block; margin: 0 .5em .6em 50px;}
 .input_zip {width: 30%; display: inline-block; margin: 0 .5em .6em .5em;}
 .input_month, .input_day {width: 150px; text-align: center; display: inline-block; margin: 0 .1em .9em .1em; border-radius: 0;}
 .input_year { display: inline-block;width: 140px; margin: 0 .4em; border-radius: 0;}
 .input_dob { display: inline-block; width: 500px; margin: 0 .4em  .6em .4em; border-radius: 0; border-radius: 10px;}
 
-.label, .label_inside {font-size: 2.5em;}
- span.checkbox {font-size: 3em;}
-.label {padding:0 30px .9em 50px;}
-
 .toggle_btn {border-radius: 10px; font-size: 3.5em; color:#000; background-color: #e6e6e8; border: 0; font-weight: 200; padding: 35px 25px; margin: 0 auto .9em auto; width: 290px; display: inline-block;}
 #male_toggle {border-radius: 10px 0 0 10px; border-right: 1px solid #ebebec; margin-left: 120px;}
 #female_toggle {border-radius: 0 10px 10px 0; border-left: 1px solid #bbbbbd;}
 
-
-input[type='checkbox'] {
-    margin-top: -30px;
-}
+input[type='checkbox'] { margin-top: -30px;}
 input[type='checkbox'] {
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeSpeed;
@@ -113,26 +110,9 @@ input[type='checkbox']:after {
 }
 
 /*toggle button*/
-.rbutton input[type="radio"] {
-    display: none;
-}
+.rbutton input[type="radio"] { display: none;}
 .rbutton {display: inline-block;}
-
 .rbutton label {font-size: 3.5em; color:#000; background-color: #e6e6e8; font-weight: 200; padding: 35px 25px; margin: 0 auto .9em auto; width: 290px; display: inline-block; text-align: center;}
-
-.rlabel_male {
- border-right: 1px solid #ebebec;
- border-radius: 10px 0 0 10px; margin-left: 120px;
-}
-
-.rlabel_female {
-border-style:solid;
-border-left-color:#bbbbbd;
-border-right-style:none;
-border-top-style:none;
-border-bottom-style:none;
-  border-radius: 0 10px 10px 0;
-}
-
-input[type="radio"]:checked + label {
-    background:#949494; color:white;}
+.rlabel_male {border-right: 1px solid #ebebec; border-radius: 10px 0 0 10px; margin-left: 120px;}
+.rlabel_female {border-style:solid; border-left-color:#bbbbbd; border-right-style:none; border-top-style:none; border-bottom-style:none; border-radius: 0 10px 10px 0;}
+input[type="radio"]:checked + label {background:#949494; color:white;}

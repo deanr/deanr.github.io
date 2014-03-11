@@ -10,30 +10,6 @@
 <script type="text/javascript" src="scripts/jquery-1.10.2.min.js"></script>
 <link rel="stylesheet" href="css/mobile_signup.css">  
 
-  <script type="text/javascript">
-  $( document ).ready(function() {
-  	$('.fancybox').fancybox();
-  	//for the scroll links to top
-	$('a[href*=#]:not([href=#])').click(function() {
-	  if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'') 
-		|| location.hostname == this.hostname) {
-
-	    	var target = $(this.hash);
-	        target = target.length ? target : $('[name=' + this.hash.slice(1) +']');
-	        if (target.length) {
-	        	$('html,body').animate({
-	            	scrollTop: target.offset().top
-	            }, 1000);
-	            return false;
-	        }
-	    }
-	});
-  	$('#no_button').click(function() {
-	  window.location='sign_up_form1.html';
-	});
-  });
-  </script>
-
 </head>
 
 <body id="top">
