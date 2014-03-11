@@ -66,7 +66,7 @@ select, input {border-radius: 10px; font-size: 3.5em; color:#000; background-col
 }
 
 .label, .label_inside {font-size: 3em;}
- span.checkbox {font-size: 3em;}
+ span.checkbox {font-size: 3em!important;}
 .label {padding:0 30px .9em 50px;}
 
 .input_state {width: 49%; display:inline-block; margin: 0 .5em .6em 50px;}
