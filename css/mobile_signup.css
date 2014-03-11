@@ -22,6 +22,7 @@ a {color:#007aff; text-decoration: none; }
 
 .button_yn, .button_next {border-radius: 10px; background-color: #d1d3d4; width: 90%; border: 0; padding: 30px; font-size: 5em; font-weight: lighter; margin:40px auto 80px auto; text-align: center; display: block;}
 .button_yn:hover, .button_next:hover {background-color: #959595; color: #fff;}
+.button_back {font-size: 4em;}
 
 .phone_link {color:#007aff; text-decoration: none; font-size:5em; text-align: center; display: block; margin: 20px .5em 25px .5em;}
 .phone_link img {margin-right: .25em;}
