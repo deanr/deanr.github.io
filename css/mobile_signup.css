@@ -119,3 +119,7 @@ input[type='checkbox']:after {
 .rlabel_male {border-right: 1px solid #ebebec; border-radius: 10px 0 0 10px; margin-left: 120px;}
 .rlabel_female {border-style:solid; border-left-color:#bbbbbd; border-right-style:none; border-top-style:none; border-bottom-style:none; border-radius: 0 10px 10px 0;}
 input[type="radio"]:checked + label {background:#949494; color:white;}
+
+/*Benefit registration page*/
+.company-error {visibility:hidden; margin-left: 300px; font-size:1.6em; color:#ff4d41;}
+.company-error img {float:left; margin-right:50px;}

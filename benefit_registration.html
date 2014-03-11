@@ -30,14 +30,13 @@
 	</table>
 
 	<h1>Benefit Registration</h1>
-	<h2 style="width:90%;">Please enter your company or group name:</h2>
+	<h2 style="text-align:center;">Please enter your company or group name:</h2>
 
 	<input id="company_code" name="company_code" type="text" placeholder="Company or group name">
 	<button class="button_next" id="next_button">Next</button>
-	<div style="visibility:hidden; margin-left: 300px; font-size:1.6em; color:#ff4d41;">
-		<img src="images/error_triangle.png" style="float:left; margin-right:50px;">
-		<script type="text/javascript">document.write(gup( 'error' ).replace(/%20/gi, " ").replace(/%2520/gi, " "));</script><br>
-		Jiffy Lube not found. 
+	<div class="company-error" style="display:none;">
+		<img src="images/error_triangle.png">
+		<script type="text/javascript">document.write(gup( 'error' ).replace(/%20/gi, " ").replace(/%2520/gi, " "));</script>
 	</div>
 	<div class="assistance">Need assistance?</div>
 	<a href="tel:+18004006354" class="phone_link"><img src="images/icon_phone_blue.png" alt="phone icon">1-800-400-6354</a>
